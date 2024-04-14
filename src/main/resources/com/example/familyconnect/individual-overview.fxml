@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<VBox alignment="CENTER" spacing="10" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.familyconnect.OverviewController">
+    <padding>
+        <Insets top="20" right="20" bottom="90" left="20"/>
+    </padding>
+
+    <Label text="Individual Overview" style="-fx-font-size: 30px; -fx-font-weight: bold;" styleClass="overview-label"/>
+
+
+    <VBox spacing="5">
+        <Label text="User Details:" style="-fx-font-size: 15px; -fx-font-weight: bold;"/>
+        <Label text="First Name:" style="-fx-padding: 5 0 0 0;"/>
+        <Label text="Last Name:" style="-fx-padding: 5 0 0 0;"/>
+        <Label text="Age:" style="-fx-padding: 5 0 0 0;"/>
+    </VBox>
+
+    <VBox alignment="CENTER">
+        <Label text="Tracking Period:" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+        <ChoiceBox fx:id="trackingPeriodChoiceBox" style="-fx-padding: 5 0 0 0;">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Daily"/>
+                    <String fx:value="Weekly"/>
+                    <String fx:value="Monthly"/>
+                    <String fx:value="Annually"/>
+                </FXCollections>
+            </items>
+        </ChoiceBox>
+    </VBox>
+
+    <VBox spacing="5">
+        <Label text="Usage Tracking:" style="-fx-font-size: 15px; -fx-font-weight: bold;"/>
+        <Label text="Screen Time:" style="-fx-padding: 5 0 0 0;"/>
+        <Label text="Activity Logs:" style="-fx-padding: 5 0 0 0;"/>
+        <Label text="Engagement Metrics:" style="-fx-padding: 5 0 0 0;"/>
+        <Label text="Sleep Patterns:" style="-fx-padding: 5 0 0 0;"/>
+        <Label text="Social Interaction Metrics:" style="-fx-padding: 5 0 0 0;"/>
+        <Label text="App Usage Breakdown:" style="-fx-padding: 5 0 0 0;"/>
+        <Label text="Focus Sessions:" style="-fx-padding: 5 0 0 0;"/>
+    </VBox>
+
+</VBox>
