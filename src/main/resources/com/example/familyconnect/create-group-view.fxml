@@ -39,7 +39,6 @@
                 <Label text="ID:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
                 <TextField fx:id="userIDTextField" GridPane.columnIndex="1" GridPane.rowIndex="0" maxWidth="Infinity"/>
             </GridPane>
-
             <HBox spacing="10.0" alignment="CENTER">
                 <Button text="Add" />
             </HBox>
