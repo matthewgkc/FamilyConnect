@@ -27,11 +27,11 @@
     </GridPane>
     <HBox VBox.vgrow="ALWAYS" spacing="20.0">
         <VBox spacing="10.0">
-            <ListView fx:id="contactsListView"  />
+            <ListView fx:id="createGroupUsersListView"  />
             <Button text="Remove user" maxWidth="Infinity"/>
         </VBox>
         <VBox spacing="10.0" prefWidth="400" >
-            <Label text="Enter the id of the family member you want to add." />
+            <Label text="Group Details:" />
             <GridPane hgap="5.0" vgap="5.0" >
                 <columnConstraints>
                     <ColumnConstraints minWidth="100" />

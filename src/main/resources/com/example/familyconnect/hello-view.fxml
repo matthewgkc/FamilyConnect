@@ -13,4 +13,5 @@
 
     <Label fx:id="welcomeText"/>
     <Button fx:id="createGroupButton" text="Create Group Page" onAction="#onCreateGroupButtonClick"/>
+    <Button fx:id="groupDetailsButton" text="Group Details Page" onAction="#onGroupDetailsButtonClick"/>
 </VBox>

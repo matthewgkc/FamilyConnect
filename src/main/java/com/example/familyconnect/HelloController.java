@@ -15,11 +15,21 @@ public class HelloController {
 
     @FXML
     private Button createGroupButton;
+    @FXML
+    private Button groupDetailsButton;
 
     @FXML
     protected void onCreateGroupButtonClick() throws IOException {
         Stage stage = (Stage) createGroupButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("create-group-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+        stage.setScene(scene);
+    }
+
+    @FXML
+    protected void onGroupDetailsButtonClick() throws IOException {
+        Stage stage = (Stage) groupDetailsButton.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("group-details-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
         stage.setScene(scene);
     }
