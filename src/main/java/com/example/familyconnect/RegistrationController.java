@@ -33,6 +33,7 @@ public class RegistrationController {
         } else {
             // Perform registration
             statusLabel.setText("Registration successful!");
+            
         }
     }
 }
