@@ -1,9 +1,16 @@
 package com.example.familyconnect;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class RegistrationController {
     @FXML
@@ -19,6 +26,9 @@ public class RegistrationController {
     private Label statusLabel;
 
     @FXML
+    public Button buttonRegistration;
+
+    @FXML
     protected void registerButtonClicked() {
         String username = usernameField.getText();
         String password = passwordField.getText();
@@ -31,9 +41,21 @@ public class RegistrationController {
         } else if (!password.equals(confirmPassword)) {
             statusLabel.setText("Passwords do not match.");
         } else {
-            // Perform registration
-            statusLabel.setText("Registration successful!");
-            
+
+            // statusLabel.setText("Registration successful!");         ## Was used for testing
+            loadPage("start.fxml");
         }
     }
+
+    private void loadPage(String fxmlFile) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fxmlFile));
+            Parent root = fxmlLoader.load();
+            Stage stage = (Stage) buttonRegistration.getScene().getWindow();
+            stage.setScene(new Scene(root));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
