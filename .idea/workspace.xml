@@ -6,6 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="cbdea7c7-8383-42c6-ab5a-512d6e6fb91f" name="Changes" comment="Made load pages for login and registration.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/RegistrationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/StartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/StartController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

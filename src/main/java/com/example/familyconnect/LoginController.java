@@ -43,7 +43,7 @@ public class LoginController {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fxmlFile));
             Parent root = fxmlLoader.load();
             Stage stage = (Stage) buttonLogin.getScene().getWindow();
-            stage.setScene(new Scene(root));
+            stage.setScene(new Scene(root, 300, 450));
         } catch (IOException e) {
             e.printStackTrace();
         }
