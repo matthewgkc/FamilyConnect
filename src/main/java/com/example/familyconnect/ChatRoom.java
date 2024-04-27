@@ -48,7 +48,7 @@ public class ChatRoom extends Application {
         root.setBottom(inputBox);
         root.setTop(joinBox);
 
-        Scene scene = new Scene(root, 400, 400);
+        Scene scene = new Scene(root, 300, 450);
         primaryStage.setTitle("Chat Room");
         primaryStage.setScene(scene);
         primaryStage.show();
