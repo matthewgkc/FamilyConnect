@@ -13,7 +13,7 @@ public class HelloApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("individual-overview.fxml"));
         VBox root = fxmlLoader.load();
-        Scene scene = new Scene(root, 800, 500);
+        Scene scene = new Scene(root, 300, 450);
 
         stage.setTitle("Family Connect");
         stage.setScene(scene);
