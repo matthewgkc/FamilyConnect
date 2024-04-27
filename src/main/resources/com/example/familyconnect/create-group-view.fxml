@@ -30,11 +30,11 @@
             <ListView fx:id="createGroupUsersListView"  />
             <Button text="Remove user" maxWidth="Infinity"/>
         </VBox>
-        <VBox spacing="10.0" prefWidth="400" >
+        <VBox spacing="10.0" prefWidth="200" >
             <Label text="Group Details:" />
             <GridPane hgap="5.0" vgap="5.0" >
                 <columnConstraints>
-                    <ColumnConstraints minWidth="100" />
+                    <ColumnConstraints minWidth="20" />
                 </columnConstraints>
                 <Label text="ID:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
                 <TextField fx:id="userIDTextField" GridPane.columnIndex="1" GridPane.rowIndex="0" maxWidth="Infinity"/>
