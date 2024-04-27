@@ -115,6 +115,23 @@ public class UserAccountDAO {
         return null;
     }
 
+    public UserAccount getByUsername(String username) {
+        try {
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM userAccounts WHERE userName = ?");
+            statement.setString(1, username);
+            ResultSet rs = statement.executeQuery();
+            if (rs.next()) {
+                return new UserAccount(
+                        rs.getInt("id"),
+                        rs.getString("userName"),
+                        rs.getString("password")
+                );
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
     public void close() {
         try {
             connection.close();

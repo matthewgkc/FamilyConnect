@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cbdea7c7-8383-42c6-ab5a-512d6e6fb91f" name="Changes" comment="Persistance (CRUD) classes made for userName and password">
+    <list default="true" id="cbdea7c7-8383-42c6-ab5a-512d6e6fb91f" name="Changes" comment="Registration, added checking to make sure usernames are not the same">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/RegistrationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/model/UserAccountDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/model/UserAccountDAO.java" afterDir="false" />
     </list>
@@ -125,14 +125,23 @@
       <option name="project" value="LOCAL" />
       <updated>1714190874463</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Registration, added checking to make sure usernames are not the same">
+      <option name="closed" value="true" />
+      <created>1714192519985</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1714192519985</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created the LoginController, RegistrationController, HomeController and the necessary FXML" />
     <MESSAGE value="Made load pages for login and registration." />
     <MESSAGE value="Persistance (CRUD) classes made for userName and password" />
-    <option name="LAST_COMMIT_MESSAGE" value="Persistance (CRUD) classes made for userName and password" />
+    <MESSAGE value="Registration, added checking to make sure usernames are not the same" />
+    <option name="LAST_COMMIT_MESSAGE" value="Registration, added checking to make sure usernames are not the same" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
