@@ -41,9 +41,11 @@ public class HelloApplication extends Application {
         }
         */
 
+        /*
         // Retrieve a record by ID
         UserAccount account = userAccountDAO.getById(2);
         System.out.println(account);
+         */
 
         /*
         // Update a record
@@ -52,7 +54,8 @@ public class HelloApplication extends Application {
         System.out.println("After update password to 25000:");
         System.out.println(userAccountDAO.getById(2));
          */
-        
+
+        /*
         // Delete a record
         System.out.println("Before deleting record with id = 1:");
         for (UserAccount acc : userAccountDAO.getAll()) {
@@ -64,8 +67,9 @@ public class HelloApplication extends Application {
         for (UserAccount acc : userAccountDAO.getAll()) {
             System.out.println(acc);
         }
+         */
         
-        userAccountDAO.close();
+        // userAccountDAO.close(); // turned off so that registering and logging in can access database
         Connection connection = DatabaseConnection.getInstance();
 
 

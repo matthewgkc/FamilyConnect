@@ -63,6 +63,20 @@ public class UserAccountDAO {
         }
     }
 
+    public boolean usernameExists(String username) {
+        try {
+            PreparedStatement statement = connection.prepareStatement("SELECT COUNT(*) FROM userAccounts WHERE userName = ?");
+            statement.setString(1, username);
+            ResultSet resultSet = statement.executeQuery();
+            resultSet.next();
+            int count = resultSet.getInt(1);
+            return count > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
     public List<UserAccount> getAll() {
         List<UserAccount> accounts = new ArrayList<>();
         try {
