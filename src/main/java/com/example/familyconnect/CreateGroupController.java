@@ -39,7 +39,7 @@ public class CreateGroupController {
             com.example.familyconnect.AddMembersController controller = loader.getController();
             controller.setGroup(groupName);
             Stage stage = (Stage) groupNameField.getScene().getWindow();
-            Scene scene = new Scene(root, 800, 500);
+            Scene scene = new Scene(root, 300, 450);
             stage.setTitle("Family Connect");
             stage.setScene(scene);
             stage.show();
