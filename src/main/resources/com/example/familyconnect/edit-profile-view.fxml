@@ -18,10 +18,10 @@
     <Label text="(change image here)"/>
 
     <Label text="Profile Name"/>
-    <TextField fx:id="profileName" maxWidth="200.0" text="Profile Name"/>
+    <TextField fx:id="profileName" maxWidth="200.0" promptText="Profile Name"/>
 
     <Label text="Email"/>
-    <TextField maxWidth="200.0" text="sample@email.com"/>
+    <TextField maxWidth="200.0" promptText="sample@email.com"/>
 
 
 </VBox>

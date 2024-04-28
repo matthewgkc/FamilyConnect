@@ -13,20 +13,23 @@
 <VBox alignment="TOP_LEFT" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.example.familyconnect.GroupDetailsController"
 >
+    <HBox alignment="CENTER">
+        <Button fx:id="backHomeButton" text="Home" onAction="#backtoHome"/>
+    </HBox>
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
     <Label text="Select a group to view group details:" />
     <HBox VBox.vgrow="ALWAYS" spacing="20.0">
         <VBox spacing="10.0">
-            <Label text="Select a group:" />
+            <Label text="Select Group:" />
             <ListView fx:id="groupsListView"  />
         </VBox>
         <VBox spacing="10.0">
-            <Label text="Select a user:" />
+            <Label text="Select User:" />
             <ListView fx:id="usersInGroupListView"  />
         </VBox>
-        <VBox spacing="10.0" prefWidth="400" >
+        <VBox spacing="10.0" prefWidth="240" >
             <Label text="User details:" />
         </VBox>
     </HBox>
