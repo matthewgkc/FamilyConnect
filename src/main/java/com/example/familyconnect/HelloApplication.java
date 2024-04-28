@@ -15,12 +15,12 @@ public class HelloApplication extends Application {
     /**
      * Width of JavaFX window
      */
-    public static final int WIDTH = 640;
+    public static final int WIDTH = 300;
 
     /**
      * Height of JavaFX window
      */
-    public static final int HEIGHT = 360;
+    public static final int HEIGHT = 450;
 
     /**
      * Starts the application and generates the start/login page
