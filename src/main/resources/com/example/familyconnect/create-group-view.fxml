@@ -10,41 +10,29 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.ColumnConstraints?>
+
 <VBox alignment="TOP_LEFT" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.familyconnect.CreateGroupController"
->
+      fx:controller="com.example.familyconnect.CreateGroupController">
     <HBox alignment="CENTER">
-        <Button fx:id="backHomeButton" text="Home" onAction="#backtoHome"/>
+        <Label text="Family Creation" />
     </HBox>
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
-    <Label text="Choose a name for the family group:" />
-    <GridPane hgap="5.0" vgap="5.0" >
-        <columnConstraints>
-            <ColumnConstraints minWidth="70" />
-            <ColumnConstraints hgrow="ALWAYS"/>
-        </columnConstraints>
-        <Label text="Family Name:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-        <TextField fx:id="familyNameTextField" GridPane.columnIndex="1" GridPane.rowIndex="0" maxWidth="Infinity"/>
-    </GridPane>
-    <HBox VBox.vgrow="ALWAYS" spacing="20.0">
-        <VBox spacing="10.0">
-            <ListView fx:id="createGroupUsersListView"  />
-            <Button text="Remove user" maxWidth="Infinity"/>
-        </VBox>
-        <VBox spacing="10.0" prefWidth="200" >
-            <Label text="Group Details:" />
-            <GridPane hgap="5.0" vgap="5.0" >
-                <columnConstraints>
-                    <ColumnConstraints minWidth="20" />
-                </columnConstraints>
-                <Label text="ID:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-                <TextField fx:id="userIDTextField" GridPane.columnIndex="1" GridPane.rowIndex="0" maxWidth="Infinity"/>
-            </GridPane>
-            <HBox spacing="10.0" alignment="CENTER">
-                <Button text="Add" />
-            </HBox>
-        </VBox>
+    <HBox alignment="CENTER">
+        <GridPane hgap="5.0" vgap="5.0" >
+            <columnConstraints>
+                <ColumnConstraints minWidth="70" />
+                <ColumnConstraints hgrow="ALWAYS"/>
+            </columnConstraints>
+            <Label text="Family Name:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField fx:id="familyNameTextField" promptText="Family Name" GridPane.columnIndex="1" GridPane.rowIndex="0" maxWidth="Infinity"/>
+        </GridPane>
+    </HBox>
+    <HBox alignment="CENTER">
+        <Button fx:id="createGroupButton" text="Create"></Button>
+    </HBox>
+    <HBox alignment="CENTER">
+        <Button fx:id="backHomeButton" text="Home" onAction="#backtoHome"/>
     </HBox>
 </VBox>
