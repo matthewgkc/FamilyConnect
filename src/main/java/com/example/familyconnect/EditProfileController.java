@@ -7,11 +7,20 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import java.io.IOException;
 
+/**
+ * Controller for edit-profile-view.fxml
+ */
 public class EditProfileController {
 
+    /**
+     * Button to send user back to user profile page
+     */
     @FXML
     private Button stopEditingButton;
 
+    /**
+     * Generates user profile page
+     */
     @FXML
     protected void stopEditingClick() throws IOException {
         Stage stage = (Stage) stopEditingButton.getScene().getWindow();
