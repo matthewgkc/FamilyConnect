@@ -7,9 +7,24 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * Application for FamilyConnect
+ */
 public class HelloApplication extends Application {
+
+    /**
+     * Width of JavaFX window
+     */
     public static final int WIDTH = 640;
+
+    /**
+     * Height of JavaFX window
+     */
     public static final int HEIGHT = 360;
+
+    /**
+     * Starts the application and generates the start/login page
+     */
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));

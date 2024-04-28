@@ -7,17 +7,33 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 import java.io.IOException;
 
+/**
+ * Controller for HelloApplication & hello-view.fxml
+ */
 public class HelloController {
 
+    /**
+     * Button to send user to create group page
+     */
     @FXML
     private Button createGroupButton;
+
+    /**
+     * Button to send user to group details page
+     */
     @FXML
     private Button groupDetailsButton;
 
+    /**
+     * Button to send user to user profile page
+     */
     @FXML
     private Button userProfileButton;
 
 
+    /**
+     * Generates create group page
+     */
     @FXML
     protected void onCreateGroupButtonClick() throws IOException {
         Stage stage = (Stage) createGroupButton.getScene().getWindow();
@@ -26,6 +42,9 @@ public class HelloController {
         stage.setScene(scene);
     }
 
+    /**
+     * Generates group details page
+     */
     @FXML
     protected void onGroupDetailsButtonClick() throws IOException {
         Stage stage = (Stage) groupDetailsButton.getScene().getWindow();
@@ -34,10 +53,12 @@ public class HelloController {
         stage.setScene(scene);
     }
 
+    /**
+     * Generates user profile page
+     */
     @FXML
     protected void onUserProfileClick() throws IOException {
         Stage stage = (Stage) userProfileButton.getScene().getWindow();
-        TreeView treeView = new TreeView();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("user-profile-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
         stage.setScene(scene);
