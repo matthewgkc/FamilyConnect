@@ -12,6 +12,7 @@
     </padding>
 
     <Button fx:id="backHomeButton" text="Home" onAction="#backtoHome"/>
+    <Button fx:id="individualOverviewButton" text="Individual Overview" onAction="#onIndividualOverviewClick"/>
 
     <Label fx:id="profilePicture" text="(Profile Image)"/>
     <Label fx:id="username" text="Profile Name"/>
