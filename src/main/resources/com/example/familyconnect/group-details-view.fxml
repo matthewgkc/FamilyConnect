@@ -10,6 +10,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.ColumnConstraints?>
+<!--
 <VBox alignment="TOP_LEFT" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.example.familyconnect.GroupDetailsController"
 >
@@ -32,5 +33,25 @@
         <VBox spacing="10.0" prefWidth="240" >
             <Label text="User details:" />
         </VBox>
+    </HBox>
+</VBox> -->
+
+<?import javafx.scene.text.Text?>
+<VBox alignment="TOP_LEFT" spacing="30.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.familyconnect.GroupDetailsController">
+    <HBox spacing = "60.0">
+        <HBox alignment="TOP_LEFT">
+            <Button fx:id="backHomeButton" text="Home" onAction="#backtoHome"/>
+        </HBox>
+        <HBox alignment="CENTER">
+            <Label text="Family Name"/>
+        </HBox>
+    </HBox>
+    <VBox alignment="CENTER">
+        <Label text="Group Members"/>
+        <ListView fx:id="familyListView" maxWidth="250" />
+    </VBox>
+    <HBox alignment="CENTER">
+        <Button fx:id="inviteNewMemberButton" text="Invite New Member" />
     </HBox>
 </VBox>
