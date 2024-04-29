@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER_LEFT" spacing="10.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.familyconnect.SettingsPageController"
+      prefHeight="450.0" prefWidth="300.0">
+    <padding>
+        <Insets top="20.0" left="20.0" right="20.0"/>
+    </padding>
+
+    <HBox alignment="CENTER">
+        <Button text="Home" onAction="#goHomeClick"/>
+        <Label text="Settings" />
+    </HBox>
+
+    <VBox spacing="5.0">
+        <Label text="User First and Last Name" />
+        <Button text="Edit My Profile" onAction="#editProfileClick"/>
+    </VBox>
+
+    <VBox spacing="5.0">
+        <Button text="Manage Family" onAction="#manageFamilyClick"/>
+        <Button text="Change Password" onAction="#changePasswordClick"/>
+        <Button text="Notification" onAction="#notificationClick"/>
+        <Button text="Language Preference" onAction="#languagePreferenceClick"/>
+        <Button text="Help" onAction="#helpClick"/>
+        <Button text="About" onAction="#aboutClick"/>
+    </VBox>
+
+    <Button fx:id="backButton" text="Back" onAction="#backClick"/>
+
+</VBox>
