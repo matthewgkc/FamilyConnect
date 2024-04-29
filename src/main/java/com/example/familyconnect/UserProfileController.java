@@ -59,6 +59,10 @@ public class UserProfileController {
         Stage stage = (Stage)this.editProfileButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("edit-profile-view.fxml"));
         Scene scene = new Scene((Parent)fxmlLoader.load(), 300.0, 450.0);
+
+        String stylesheet = HelloApplication.class.getResource("stylesheet.css").toExternalForm();
+        scene.getStylesheets().add(stylesheet);
+
         stage.setScene(scene);
     }
 }
