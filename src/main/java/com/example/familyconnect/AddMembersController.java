@@ -13,6 +13,7 @@ import java.io.IOException;
 
 public class AddMembersController {
 
+
     @FXML
     private TextField memberNameField;
 
