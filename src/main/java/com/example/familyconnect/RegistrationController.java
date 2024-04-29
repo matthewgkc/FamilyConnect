@@ -1,5 +1,8 @@
 package com.example.familyconnect;
 
+import com.example.familyconnect.model.DatabaseConnection;
+import com.example.familyconnect.model.UserAccount;
+import com.example.familyconnect.model.UserAccountDAO;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,6 +14,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.Connection;
 
 public class RegistrationController {
     @FXML
@@ -41,9 +45,21 @@ public class RegistrationController {
         } else if (!password.equals(confirmPassword)) {
             statusLabel.setText("Passwords do not match.");
         } else {
+            try {
+                UserAccountDAO userAccountDAO = new UserAccountDAO();
 
-            // statusLabel.setText("Registration successful!");         ## Was used for testing
-            loadPage("start.fxml");
+                if (userAccountDAO.usernameExists(username)) {
+                    statusLabel.setText("Username already exists.");
+                }
+                else{
+                    userAccountDAO.insert(new UserAccount(username, password));
+                    // statusLabel.setText("Registration successful!");         ## Was used for testing
+                    loadPage("start.fxml");
+                }
+
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 
@@ -52,7 +68,7 @@ public class RegistrationController {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fxmlFile));
             Parent root = fxmlLoader.load();
             Stage stage = (Stage) buttonRegistration.getScene().getWindow();
-            stage.setScene(new Scene(root,300, 450));
+            stage.setScene(new Scene(root, 300, 450));
         } catch (IOException e) {
             e.printStackTrace();
         }

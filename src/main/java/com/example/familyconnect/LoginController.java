@@ -1,5 +1,8 @@
 package com.example.familyconnect;
 
+import com.example.familyconnect.model.DatabaseConnection;
+import com.example.familyconnect.model.UserAccount;
+import com.example.familyconnect.model.UserAccountDAO;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,6 +14,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.Connection;
 
 public class LoginController {
 
@@ -30,12 +34,18 @@ public class LoginController {
         String username = usernameField.getText();
         String password = passwordField.getText();
 
-        if (username.equals("user") && password.equals("pass")) {
+        try {
+            UserAccountDAO userAccountDAO = new UserAccountDAO();
+            UserAccount userAccount = userAccountDAO.getByUsername(username);
 
-            // loginMessageLabel.setText("Login successful.");      ## Was used for testing
-            loadPage("home.fxml");
-        } else {
-            loginMessageLabel.setText("Invalid credentials.");
+            if (userAccount != null && userAccount.getPassword().equals(password)) {
+                // loginMessageLabel.setText("Login successful.");      ## Was used for testing
+                loadPage("home.fxml");
+            } else {
+                loginMessageLabel.setText("Invalid credentials.");
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
     }
     private void loadPage(String fxmlFile) {
