@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="10.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.familyconnect.ChatController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <VBox spacing="5.0" alignment="CENTER">
+        <Label text="Enter your username:"/>
+        <TextField fx:id="usernameField" promptText="Username"/>
+        <Button fx:id="joinButton" text="Join" onAction="#join"/>
+        <ListView fx:id="chatListView" VBox.vgrow="ALWAYS"/>
+        <HBox spacing="5.0">
+            <TextField fx:id="userInputField" promptText="Type your message here..." HBox.hgrow="ALWAYS"/>
+            <Button fx:id="sendButton" text="Send" onAction="#sendMessage"/>
+        </HBox>
+    </VBox>
+</VBox>
