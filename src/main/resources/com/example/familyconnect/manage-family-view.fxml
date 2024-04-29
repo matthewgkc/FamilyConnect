@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER_LEFT" spacing="10.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.familyconnect.ManageFamilyPageController"
+      prefHeight="450.0" prefWidth="300.0">
+    <padding>
+        <Insets top="20.0" left="20.0" right="20.0"/>
+    </padding>
+
+    <HBox alignment="CENTER">
+        <Button text="Back" onAction="#backClick"/>
+        <Label text="Manage Family" />
+    </HBox>
+
+    <VBox spacing="5.0">
+        <Label text="Add Family Members" />
+        <TextField fx:id="emailOrPhoneNumberField" promptText="Enter email or phone number" />
+        <Button text="Add" onAction="#addMemberClick"/>
+    </VBox>
+
+    <!-- Add additional components as needed -->
+
+</VBox>
+
