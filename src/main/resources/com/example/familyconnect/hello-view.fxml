@@ -15,4 +15,5 @@
     <Button fx:id="userProfileButton" text="User Profile" onAction="#onUserProfileClick"/>
     <Button fx:id="createGroupButton" text="Create Group Page" onAction="#onCreateGroupButtonClick"/>
     <Button fx:id="groupDetailsButton" text="Group Details Page" onAction="#onGroupDetailsButtonClick"/>
+    <Button fx:id="chatRoomButton" text="Chat Room" onAction="#onChatRoomClick"/>
 </VBox>
