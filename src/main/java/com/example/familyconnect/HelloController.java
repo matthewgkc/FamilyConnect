@@ -30,6 +30,11 @@ public class HelloController {
     @FXML
     private Button userProfileButton;
 
+    /**
+     * Button to send user to chat room
+     */
+    @FXML
+    private Button chatRoomButton;
 
     /**
      * Generates create group page
@@ -64,5 +69,12 @@ public class HelloController {
         stage.setScene(scene);
     }
 
+    @FXML
+    protected void onChatRoomButtonClick() throws IOException {
+        Stage stage = (Stage) chatRoomButton.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("chat-room-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+        stage.setScene(scene);
+    }
 
 }

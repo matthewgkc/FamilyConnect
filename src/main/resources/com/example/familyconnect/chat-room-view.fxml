@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="10.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.familyconnect.ChatController">
+
+    <Label text="Your Message:" style="-fx-font-weight: bold;"/>
+    <HBox spacing="5.0">
+        <TextField fx:id="userInputField" promptText="Type your message here..." HBox.hgrow="ALWAYS"/>
+        <Button text="Send" onAction="#handleSendButton"/>
+    </HBox>
+</VBox>
+

@@ -7,18 +7,14 @@
 <?import javafx.scene.layout.VBox?>
 
 <VBox alignment="CENTER" spacing="10.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="org.example.chat.ChatController">
+      fx:controller="com.example.familyconnect.HelloController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
 
-    <VBox spacing="5.0">
-        <Label text="Your Message:" style="-fx-font-weight: bold;"/>
-        <HBox spacing="5.0">
-            <TextField fx:id="userInputField" promptText="Type your message here..." HBox.hgrow="ALWAYS"/>
-            <Button text="Send" onAction="#handleSendButton"/>
-        </HBox>
-    </VBox>
-
+        <Button fx:id="userProfileButton" text="User Profile" onAction="#onUserProfileClick"/>
+        <Button fx:id="createGroupButton" text="Create Group Page" onAction="#onCreateGroupButtonClick"/>
+        <Button fx:id="groupDetailsButton" text="Group Details Page" onAction="#onGroupDetailsButtonClick"/>
+        <Button fx:id="chatRoomButton" text="Go to Chatroom" onAction="#onChatRoomButtonClick"/>
 
 </VBox>
