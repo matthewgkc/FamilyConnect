@@ -12,8 +12,8 @@
     </padding>
 
     <HBox alignment="CENTER">
-        <Button text="Back" onAction="#backClick"/>
-        <Label text="Manage Family" />
+        <Button fx:id="backHomeButton" text="Home" onAction="#backtoHome"/>
+        <Label text="Manage Family" style="-fx-font-size: 20; -fx-font-weight: bold;" />
     </HBox>
 
     <VBox spacing="5.0">
@@ -21,8 +21,6 @@
         <TextField fx:id="emailOrPhoneNumberField" promptText="Enter email or phone number" />
         <Button text="Add" onAction="#addMemberClick"/>
     </VBox>
-
-    <!-- Add additional components as needed -->
 
 </VBox>
 
