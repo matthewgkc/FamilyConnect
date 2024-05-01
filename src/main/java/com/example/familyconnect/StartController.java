@@ -9,23 +9,42 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ *Controller for testing login and registration
+ */
 public class StartController {
 
+    /**
+     *Button that sends user to login page
+     */
     @FXML
     public Button loginButton;
+
+    /**
+     *Button that sends user to registration page
+     */
     @FXML
     public Button registerButton;
 
+    /**
+     *Sends user to login page
+     */
     @FXML
     protected void goToLoginPage() {
         loadPage("login.fxml");
     }
 
+    /**
+     *Sends user to registration page
+     */
     @FXML
     protected void goToRegistrationPage() {
         loadPage("registration.fxml");
     }
 
+    /**
+     *Function that sends the user to the login page on command
+     */
     private void loadPage(String fxmlFile) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fxmlFile));

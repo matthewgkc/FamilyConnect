@@ -8,15 +8,27 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ *Controller for the GroupDetails View
+ */
 public class GroupDetailsController {
+
+    /**
+     *Button that sends the user back to the home-page
+     */
     @FXML
     private Button backHomeButton;
 
+    /**
+     *Sends the user back to the home-page
+     */
     @FXML
     protected void backtoHome() throws IOException {
         Stage stage = (Stage) backHomeButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+        String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
+        scene.getStylesheets().add(stylesheet);
         stage.setScene(scene);
     }
 }

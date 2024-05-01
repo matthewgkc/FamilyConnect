@@ -5,23 +5,27 @@
 <?import javafx.scene.layout.VBox?>
 
 
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+<?import javafx.scene.layout.HBox?>
+<VBox alignment="TOP_LEFT" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.example.familyconnect.EditProfileController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
 
-    <Button fx:id="stopEditingButton" text="Back" onAction="#stopEditingClick"/>
+    <HBox alignment="TOP_LEFT" styleClass="profileContainer">
+        <Button fx:id="stopEditingButton" text="Back" onAction="#stopEditingClick"/>
+    </HBox>
 
-    <Label text="Profile Picture"/>
+    <Label text="Profile Picture" styleClass="label"/>
+    <Label text="(change image here)" styleClass="label"/>
 
-    <Label text="(change image here)"/>
+    <VBox alignment="CENTER" styleClass="mainContainer" spacing="10.0">
+        <Label text="Profile Name" styleClass="label"/>
+        <TextField fx:id="profileName" maxWidth="200.0" promptText="Profile Name"/>
 
-    <Label text="Profile Name"/>
-    <TextField fx:id="profileName" maxWidth="200.0" promptText="Profile Name"/>
-
-    <Label text="Email"/>
-    <TextField maxWidth="200.0" promptText="sample@email.com"/>
+        <Label text="Email"/>
+        <TextField maxWidth="200.0" promptText="sample@email.com"/>
+    </VBox>
 
 
 </VBox>

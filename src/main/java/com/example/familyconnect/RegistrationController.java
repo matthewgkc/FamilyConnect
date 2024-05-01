@@ -16,22 +16,44 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.Connection;
 
+/**
+ *Controller for the registration page
+ */
 public class RegistrationController {
+
+    /**
+     *Text field for the username input
+     */
     @FXML
     private TextField usernameField;
 
+    /**
+     *Password field for the password input
+     */
     @FXML
     private PasswordField passwordField;
 
+    /**
+     *Password field for the password confirmation
+     */
     @FXML
     private PasswordField confirmPasswordField;
 
+    /**
+     *Label that displays the results of the registration attempt
+     */
     @FXML
     private Label statusLabel;
 
+    /**
+     *Button that attempts registration
+     */
     @FXML
     public Button buttonRegistration;
 
+    /**
+     *Validates registration from username, password, and password confirmation inputs
+     */
     @FXML
     protected void registerButtonClicked() {
         String username = usernameField.getText();
@@ -63,6 +85,9 @@ public class RegistrationController {
         }
     }
 
+    /**
+     *Function that creates the registration page on command
+     */
     private void loadPage(String fxmlFile) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fxmlFile));

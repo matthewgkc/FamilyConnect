@@ -12,22 +12,39 @@ import javafx.scene.control.TextField;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ *Controller for CreateGroup View
+ */
 public class CreateGroupController {
 
+    /**
+     *Text field for the new group name
+     */
     @FXML
     private TextField groupNameField;
 
+    /**
+     *Button to send user back to home-page
+     */
     @FXML
     private Button backHomeButton;
 
+    /**
+     *Sends user back to home-page
+     */
     @FXML
     protected void backtoHome() throws IOException {
         Stage stage = (Stage)this.backHomeButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
         Scene scene = new Scene((Parent)fxmlLoader.load(), 300.0, 450.0);
+        String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
+        scene.getStylesheets().add(stylesheet);
         stage.setScene(scene);
     }
 
+    /**
+     *Creates group unless the group name field is empty
+     */
     @FXML
     private void createGroupAndProceed() {
         String groupName = groupNameField.getText();
@@ -44,6 +61,10 @@ public class CreateGroupController {
     }
 
 
+    /**
+     *Sends user to the AddMembers page
+     * @param groupName String of the new group name
+     */
     private void loadAddMembersPage(String groupName) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("add-members.fxml"));
