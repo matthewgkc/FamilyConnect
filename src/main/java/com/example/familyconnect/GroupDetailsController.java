@@ -17,6 +17,8 @@ public class GroupDetailsController {
         Stage stage = (Stage) backHomeButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+        String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
+        scene.getStylesheets().add(stylesheet);
         stage.setScene(scene);
     }
 }

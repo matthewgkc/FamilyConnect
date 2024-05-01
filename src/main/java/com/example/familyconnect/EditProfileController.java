@@ -26,6 +26,8 @@ public class EditProfileController {
         Stage stage = (Stage) stopEditingButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("user-profile-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+        String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
+        scene.getStylesheets().add(stylesheet);
         stage.setScene(scene);
     }
 
