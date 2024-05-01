@@ -82,6 +82,9 @@ public class HelloController {
         stage.setScene(scene);
     }
 
+    /**
+     * Sends user to the chatroom page
+     */
     @FXML
     protected void onChatRoomButtonClick() throws IOException {
         Stage stage = (Stage) chatRoomButton.getScene().getWindow();
@@ -92,6 +95,9 @@ public class HelloController {
         stage.setScene(scene);
     }
 
+    /**
+     *Sends user to the individual overview page
+     */
     @FXML
     protected void onDigitalUsageOverviewClick() throws IOException {
         Stage stage = (Stage)this.overviewButton.getScene().getWindow();

@@ -8,10 +8,20 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ *Controller for the GroupDetails View
+ */
 public class GroupDetailsController {
+
+    /**
+     *Button that sends the user back to the home-page
+     */
     @FXML
     private Button backHomeButton;
 
+    /**
+     *Sends the user back to the home-page
+     */
     @FXML
     protected void backtoHome() throws IOException {
         Stage stage = (Stage) backHomeButton.getScene().getWindow();

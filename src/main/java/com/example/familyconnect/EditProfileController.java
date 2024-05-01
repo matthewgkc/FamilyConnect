@@ -21,6 +21,10 @@ public class EditProfileController {
     /**
      * Generates user profile page
      */
+
+    /**
+     *Sends user back to the user-profile page
+     */
     @FXML
     protected void stopEditingClick() throws IOException {
         Stage stage = (Stage) stopEditingButton.getScene().getWindow();

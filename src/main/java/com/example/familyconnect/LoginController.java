@@ -16,19 +16,38 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.Connection;
 
+/**
+ *Controller for the login page
+ */
 public class LoginController {
 
+    /**
+     *Text field for the username input
+     */
     @FXML
     private TextField usernameField;
 
+    /**
+     *Password field for the password input
+     */
     @FXML
     private PasswordField passwordField;
 
+    /**
+     *Label that displays the login results
+     */
     @FXML
     private Label loginMessageLabel;
+
+    /**
+     *Button for attempting login
+     */
     @FXML
     public Button buttonLogin;
 
+    /**
+     *Username and password validation for login
+     */
     @FXML
     protected void handleLogin() {
         String username = usernameField.getText();
@@ -48,6 +67,10 @@ public class LoginController {
             throw new RuntimeException(e);
         }
     }
+
+    /**
+     *Function to create the login page on command
+     */
     private void loadPage(String fxmlFile) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fxmlFile));

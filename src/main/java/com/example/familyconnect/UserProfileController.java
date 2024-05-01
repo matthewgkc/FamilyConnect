@@ -13,19 +13,44 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
+/**
+ *Controller for the user profile View
+ */
 public class UserProfileController {
+
+    /**
+     *Button to send user back to the home-page
+     */
     @FXML
     private Button backHomeButton;
+
+    /**
+     *Button to send user to the edit-profile page
+     */
     @FXML
     private Button editProfileButton;
+
+    /**
+     *Button to remove user data from database, and send back to login page
+     */
     @FXML
     private Button deleteProfileButton;
+
+    /**
+     *Button to send user to individual overview page
+     */
     @FXML
     private Button individualOverviewButton;
 
+    /**
+     * Constructor for user-profile controller
+     */
     public UserProfileController() {
     }
 
+    /**
+     *Sends user back to home-page
+     */
     @FXML
     protected void backtoHome() throws IOException {
         Stage stage = (Stage)this.backHomeButton.getScene().getWindow();
@@ -36,6 +61,9 @@ public class UserProfileController {
         stage.setScene(scene);
     }
 
+    /**
+     *Sends user to the individual overview page
+     */
     @FXML
     protected void onIndividualOverviewClick() throws IOException {
         Stage stage = (Stage)this.individualOverviewButton.getScene().getWindow();
@@ -46,6 +74,9 @@ public class UserProfileController {
         stage.setScene(scene);
     }
 
+    /**
+     *Allows the user to select edit profile or delete profile buttons
+     */
     @FXML
     protected void expandProfileOptions() throws IOException {
         if (!this.editProfileButton.isVisible() && !this.deleteProfileButton.isVisible()) {
@@ -58,6 +89,9 @@ public class UserProfileController {
 
     }
 
+    /**
+     *Sends user to edit-profile page
+     */
     @FXML
     protected void onEditProfileClick() throws IOException {
         Stage stage = (Stage)this.editProfileButton.getScene().getWindow();
