@@ -3,6 +3,7 @@ package com.example.familyconnect;
 import com.example.familyconnect.model.DatabaseConnection;
 import com.example.familyconnect.model.UserAccount;
 import com.example.familyconnect.model.UserAccountDAO;
+import com.example.familyconnect.model.UserGroupDAO;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -43,6 +44,10 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) {
+        UserGroupDAO userGroupDAO = new UserGroupDAO();
+        userGroupDAO.createTable();
+
+        /* Must come after userGroupDAO so that the groupId foreign key constraint is valid*/
         UserAccountDAO userAccountDAO = new UserAccountDAO();
         userAccountDAO.createTable();
 
