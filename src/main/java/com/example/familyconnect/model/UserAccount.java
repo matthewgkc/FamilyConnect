@@ -21,8 +21,14 @@ public class UserAccount {
         return id;
     }
 
+    public void setId(int id) { this.id = id; }
+
     public String getUserName() {
         return userName;
+    }
+
+    public void setUsername(String userName) {
+        this.userName = userName;
     }
 
     public String getPassword() {
