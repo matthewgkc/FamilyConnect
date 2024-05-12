@@ -1,12 +1,16 @@
 package com.example.familyconnect;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
@@ -14,6 +18,24 @@ import java.time.format.DateTimeFormatter;
  *Controller for Chatroom View
  */
 public class ChatController {
+    /**
+     *Button that sends the user back to the home-page
+     */
+    @FXML
+    private Button backHomeButton;
+
+    /**
+     *Sends the user back to the home-page
+     */
+    @FXML
+    protected void backtoHome() throws IOException {
+        Stage stage = (Stage) backHomeButton.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+        String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
+        scene.getStylesheets().add(stylesheet);
+        stage.setScene(scene);
+    }
 
     /**
      *ListView of strings for each chat message
