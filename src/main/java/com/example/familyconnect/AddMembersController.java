@@ -1,5 +1,9 @@
 package com.example.familyconnect;
 
+import com.example.familyconnect.model.UserAccount;
+import com.example.familyconnect.model.UserAccountDAO;
+import com.example.familyconnect.model.UserGroup;
+import com.example.familyconnect.model.UserGroupDAO;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -82,14 +86,28 @@ public class AddMembersController {
     @FXML
     private void createGroupAndProceed() {
         String memberName = memberNameField.getText();
-        if (!memberName.isEmpty()) {
-            successLabel.setText(memberName + " has been successfully added to " + groupName);
-            successLabel.setVisible(true);
-            errorLabel.setVisible(false);
-        } else {
+        UserAccountDAO userAccountDAO = new UserAccountDAO();
+        UserAccount userAccount = userAccountDAO.getByUsername(memberName);
+
+        if (memberName.isEmpty()) {
             errorLabel.setText("MEMBER NAME CANNOT BE BLANK!!!!");
             errorLabel.setVisible(true);
             successLabel.setVisible(false);
+        }
+        else if (userAccount == null) {
+            errorLabel.setText("User does not exist.");
+            errorLabel.setVisible(true);
+            successLabel.setVisible(false);
+        }
+        else {
+            UserGroupDAO usergroupDAO = new UserGroupDAO();
+            UserGroup usergroup = usergroupDAO.getByGroupName(groupName);
+            userAccount.setGroupId(usergroup.getGroupId());
+            userAccountDAO.update(userAccount);
+
+            successLabel.setText(memberName + " has been successfully added to " + groupName);
+            successLabel.setVisible(true);
+            errorLabel.setVisible(false);
         }
         memberNameField.clear();
     }
