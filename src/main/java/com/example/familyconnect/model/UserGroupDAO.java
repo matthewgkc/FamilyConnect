@@ -16,7 +16,7 @@ public class UserGroupDAO {
             Statement createTable = connection.createStatement();
             createTable.execute(
                     "CREATE TABLE IF NOT EXISTS userGroup ("
-                            + "groupId INTEGER PRIMARY KEY AUTOINCREMENT, "
+                            + "groupId INTEGER PRIMARY KEY, "
                             + "groupName VARCHAR NOT NULL"
                             + ")"
             );
@@ -40,27 +40,32 @@ public class UserGroupDAO {
     public void update(UserGroup userGroup) {
         try {
             PreparedStatement updateAccount = connection.prepareStatement(
-                    "UPDATE userGroup SET userName = ? WHERE id = ?" // ", WHERE id = ?" (error)
+                    "UPDATE userGroup SET groupName = ? WHERE groupId = ?" // ", WHERE id = ?" (error)
             );
             updateAccount.setString(1, userGroup.getGroupName());
-            updateAccount.setInt(2, userGroup.getId()); // Was causing an error
+            updateAccount.setInt(2, userGroup.getGroupId()); // Was causing an error
             updateAccount.execute();
+
+            System.out.println(userGroup.getGroupName());
+            System.out.println(userGroup.getGroupId());
+
+
         } catch (SQLException ex) {
             System.err.println(ex);
         }
     }
 
-    public void delete(int id) {
+    public void delete(int groupId) {
         try {
-            PreparedStatement deleteAccount = connection.prepareStatement("DELETE FROM userGroup WHERE id = ?");
-            deleteAccount.setInt(1, id);
+            PreparedStatement deleteAccount = connection.prepareStatement("DELETE FROM userGroup WHERE groupId = ?");
+            deleteAccount.setInt(1, groupId);
             deleteAccount.execute();
         } catch (SQLException ex) {
             System.err.println(ex);
         }
     }
 
-    public boolean usernameExists(String groupName) {
+    public boolean groupNameExists(String groupName) {
         try {
             PreparedStatement statement = connection.prepareStatement("SELECT COUNT(*) FROM userGroup WHERE groupName = ?");
             statement.setString(1, groupName);
@@ -82,7 +87,7 @@ public class UserGroupDAO {
             while (rs.next()) {
                 groups.add(
                         new UserGroup(
-                                rs.getInt("id"),
+                                rs.getInt("groupId"),
                                 rs.getString("groupName")
                         )
                 );
@@ -93,14 +98,14 @@ public class UserGroupDAO {
         return groups;
     }
 
-    public UserGroup getById(int id) {
+    public UserGroup getById(int groupId) {
         try {
-            PreparedStatement getAccount = connection.prepareStatement("SELECT * FROM userGroup WHERE id = ?");
-            getAccount.setInt(1, id);
+            PreparedStatement getAccount = connection.prepareStatement("SELECT * FROM userGroup WHERE groupId = ?");
+            getAccount.setInt(1, groupId);
             ResultSet rs = getAccount.executeQuery();
             if (rs.next()) {
                 return new UserGroup(
-                        rs.getInt("id"),
+                        rs.getInt("groupId"),
                         rs.getString("userName")
                 );
             }
@@ -112,16 +117,19 @@ public class UserGroupDAO {
 
     public UserGroup getByGroupName(String groupName) {
         try {
-            PreparedStatement statement = connection.prepareStatement("SELECT * FROM userGroup WHERE groupName = ?");
+            PreparedStatement statement = connection.prepareStatement("SELECT groupId FROM userGroup WHERE groupName = ?");
             statement.setString(1, groupName);
             ResultSet rs = statement.executeQuery();
             if (rs.next()) {
                 return new UserGroup(
-                        rs.getInt("id"),
-                        rs.getString("groupName")
+                        rs.getInt("groupId"),
+                        groupName
                 );
             }
         } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        catch (Exception e) {
             e.printStackTrace();
         }
         return null;

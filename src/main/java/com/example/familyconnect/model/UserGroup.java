@@ -1,11 +1,11 @@
 package com.example.familyconnect.model;
 
 public class UserGroup {
-    private int id;
+    private int groupId;
     private String groupName;
 
-    public UserGroup(int id, String groupName) {
-        this.id = id;
+    public UserGroup(int groupId, String groupName) {
+        this.groupId = groupId;
         this.groupName = groupName;
     }
 
@@ -14,12 +14,12 @@ public class UserGroup {
         this.groupName = groupName;
     }
 
-    public int getId() {
-        return id;
+    public int getGroupId() {
+        return groupId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setGroupId(int groupId) {
+        this.groupId = groupId;
     }
 
     public String getGroupName() {
@@ -32,8 +32,8 @@ public class UserGroup {
 
     @Override
     public String toString() {
-        return "UserAccount{" +
-                "id=" + id +
+        return "UserGroup{" +
+                "id=" + groupId +
                 ", userName='" + groupName +
                 '}';
     }

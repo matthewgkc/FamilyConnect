@@ -5,6 +5,15 @@ public class UserAccount {
     private String userName;
     private String password;
 
+    private int groupId;
+
+    public UserAccount(int id, String userName, String password, int groupId) {
+        this.id = id;
+        this.userName = userName;
+        this.password = password;
+        this.groupId = groupId;
+    }
+
     public UserAccount(int id, String userName, String password) {
         this.id = id;
         this.userName = userName;
@@ -43,7 +52,9 @@ public class UserAccount {
         this.userName = userName;
     }
 
+    public int getGroupId() { return groupId; }
 
+    public void setGroupId(int groupId) { this.groupId = groupId; }
 
     @Override
     public String toString() {
