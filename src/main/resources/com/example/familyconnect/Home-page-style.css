@@ -18,10 +18,11 @@
 .label {
     -fx-background-color: #F0EBD8;
     -fx-background-radius: 20px;
+    -fx-text-fill: #3E5C76; /* Ensure text visibility */
 }
 
 .choice {
-    -fx-color: #3E5C76;
+    -fx-text-fill: #3E5C76;
 }
 
 .button {
@@ -42,6 +43,7 @@
     -fx-border-color: #3E5C76;
     -fx-border-width: 2px;
     -fx-border-radius: 5px;
+    -fx-text-fill: #3E5C76;
 }
 
 .listView {

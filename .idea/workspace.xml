@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cbdea7c7-8383-42c6-ab5a-512d6e6fb91f" name="Changes" comment="added home button in chat room page">
+    <list default="true" id="cbdea7c7-8383-42c6-ab5a-512d6e6fb91f" name="Changes" comment="modified css design">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/familyconnect/Home-page-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/familyconnect/Home-page-style.css" afterDir="false" />
     </list>
@@ -152,7 +152,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715526921425</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="modified css design">
+      <option name="closed" value="true" />
+      <created>1715528650752</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1715528650752</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -171,6 +179,7 @@
     <MESSAGE value="modified" />
     <MESSAGE value="Removed dependency graph from maven.yml" />
     <MESSAGE value="added home button in chat room page" />
-    <option name="LAST_COMMIT_MESSAGE" value="added home button in chat room page" />
+    <MESSAGE value="modified css design" />
+    <option name="LAST_COMMIT_MESSAGE" value="modified css design" />
   </component>
 </project>
