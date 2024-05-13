@@ -56,6 +56,12 @@ public class AddMembersController {
     @FXML
     private Button backHomeButton;
 
+    public Session userSession;
+
+    public void setSession(Session userSession) {
+        this.userSession = userSession;
+    }
+
     /**
      *Sends user back to home-page
      */
@@ -88,6 +94,8 @@ public class AddMembersController {
         String memberName = memberNameField.getText();
         UserAccountDAO userAccountDAO = new UserAccountDAO();
         UserAccount userAccount = userAccountDAO.getByUsername(memberName);
+        UserGroupDAO usergroupDAO = new UserGroupDAO();
+        UserGroup usergroup = usergroupDAO.getByGroupName(groupName);
 
         if (memberName.isEmpty()) {
             errorLabel.setText("MEMBER NAME CANNOT BE BLANK!!!!");
@@ -99,9 +107,18 @@ public class AddMembersController {
             errorLabel.setVisible(true);
             successLabel.setVisible(false);
         }
+        else if (userAccount.getGroupId() != 0 && userAccount.getGroupId() != usergroup.getGroupId()) {
+            UserGroup failgroup = usergroupDAO.getById(userAccount.getGroupId());
+            errorLabel.setText("User is already in a group (" + failgroup.getGroupName() + ").");
+            errorLabel.setVisible(true);
+            successLabel.setVisible(false);
+        }
+        else if (userAccount.getGroupId() == usergroup.getGroupId()) {
+            errorLabel.setText("User is already in your group");
+            errorLabel.setVisible(true);
+            successLabel.setVisible(false);
+        }
         else {
-            UserGroupDAO usergroupDAO = new UserGroupDAO();
-            UserGroup usergroup = usergroupDAO.getByGroupName(groupName);
             userAccount.setGroupId(usergroup.getGroupId());
             userAccountDAO.update(userAccount);
 
