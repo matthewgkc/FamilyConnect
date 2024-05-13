@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cbdea7c7-8383-42c6-ab5a-512d6e6fb91f" name="Changes" comment="Added UserAccount groupId unit tests">
+    <list default="true" id="cbdea7c7-8383-42c6-ab5a-512d6e6fb91f" name="Changes" comment="Removed groupTest to fix build potentially">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,7 +77,7 @@
       <recent name="com.example.familyconnect" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.UserAccountTest">
     <configuration name="UserAccountTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="FamilyConnect" />
       <extension name="coverage">
@@ -165,7 +165,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715561043942</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Removed groupTest to fix build potentially">
+      <option name="closed" value="true" />
+      <created>1715561190781</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1715561190781</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -185,6 +193,7 @@
     <MESSAGE value="Removed dependency graph from maven.yml" />
     <MESSAGE value="Created UserGroup unit tests" />
     <MESSAGE value="Added UserAccount groupId unit tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added UserAccount groupId unit tests" />
+    <MESSAGE value="Removed groupTest to fix build potentially" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed groupTest to fix build potentially" />
   </component>
 </project>

@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class UserGroupTest {
 
-    private UserGroup usergroup;
+    public UserGroup usergroup;
 
     @BeforeEach
     void setUp() {
