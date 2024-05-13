@@ -1,5 +1,7 @@
 package com.example.familyconnect;
 
+import com.example.familyconnect.model.UserGroupDAO;
+import com.example.familyconnect.model.UserGroup;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,6 +12,8 @@ import javafx.stage.Stage;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 
 /**
@@ -49,7 +53,9 @@ public class CreateGroupController {
     private void createGroupAndProceed() {
         String groupName = groupNameField.getText();
         if (!groupName.isEmpty()) {
-            Group newGroup = new Group(groupName, new ArrayList<>());
+            UserGroupDAO userGroupDAO = new UserGroupDAO();
+            UserGroup usergroup = new UserGroup(groupName);
+            userGroupDAO.insert(usergroup);
             loadAddMembersPage(groupName);
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);

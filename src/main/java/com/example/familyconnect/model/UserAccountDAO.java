@@ -18,7 +18,9 @@ public class UserAccountDAO {
                     "CREATE TABLE IF NOT EXISTS userAccounts ("
                             + "id INTEGER PRIMARY KEY AUTOINCREMENT, "
                             + "userName VARCHAR NOT NULL, "
-                            + "password STRING NOT NULL"
+                            + "password STRING NOT NULL, "
+                            + "groupId INTEGER, "
+                            + "FOREIGN KEY (groupId) REFERENCES userGroup(groupId)"
                             + ")"
             );
         } catch (SQLException ex) {
@@ -42,11 +44,12 @@ public class UserAccountDAO {
     public void update(UserAccount userAccount) {
         try {
             PreparedStatement updateAccount = connection.prepareStatement(
-                    "UPDATE userAccounts SET userName = ?, password = ? WHERE id = ?" // ", WHERE id = ?" (error)
+                    "UPDATE userAccounts SET userName = ?, password = ?, groupId = ? WHERE id = ?" // ", WHERE id = ?" (error)
             );
             updateAccount.setString(1, userAccount.getUserName());
             updateAccount.setString(2, userAccount.getPassword());
-            updateAccount.setInt(3, userAccount.getId()); // Was causing an error
+            updateAccount.setInt(3, userAccount.getGroupId()); // Was causing an error
+            updateAccount.setInt(4, userAccount.getId()); // Was causing an error
             updateAccount.execute();
         } catch (SQLException ex) {
             System.err.println(ex);
