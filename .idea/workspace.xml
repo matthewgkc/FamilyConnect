@@ -73,7 +73,7 @@
       <recent name="com.example.familyconnect" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.UserAccountTest">
     <configuration name="UserAccountTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="FamilyConnect" />
       <extension name="coverage">
@@ -89,9 +89,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UserGroupTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FamilyConnect" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="UserGroupTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UserAccountTests" />
+        <item itemvalue="JUnit.UserAccountTest" />
+        <item itemvalue="JUnit.UserGroupTest" />
       </list>
     </recent_temporary>
   </component>
