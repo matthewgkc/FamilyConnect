@@ -59,7 +59,7 @@ public class LoginController {
 
             if (userAccount != null && userAccount.getPassword().equals(password)) {
                 // loginMessageLabel.setText("Login successful.");      ## Was used for testing
-                loadPage("home.fxml");
+                loadPage("hello-view.fxml");
             } else {
                 loginMessageLabel.setText("Invalid credentials.");
             }
@@ -73,8 +73,15 @@ public class LoginController {
      */
     private void loadPage(String fxmlFile) {
         try {
+            String username = usernameField.getText();
+            String password = passwordField.getText();
+
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fxmlFile));
             Parent root = fxmlLoader.load();
+
+            com.example.familyconnect.HelloController controller = fxmlLoader.getController();
+            controller.setSession(new Session(new UserAccount(username, password)));
+
             Stage stage = (Stage) buttonLogin.getScene().getWindow();
             stage.setScene(new Scene(root, 300, 450));
         } catch (IOException e) {
