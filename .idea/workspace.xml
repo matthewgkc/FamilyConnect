@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="cbdea7c7-8383-42c6-ab5a-512d6e6fb91f" name="Changes" comment="modified">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/ChatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/ChatController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/familyconnect/chat-room-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/familyconnect/chat-room-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +52,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "ChatroomHomeButton",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/georgioangelo/Library/CloudStorage/OneDrive-QueenslandUniversityofTechnology/2024/Semester 1/CAB302/FamilyConnect/src/main/resources/com/example/familyconnect",
     "project.structure.last.edited": "Libraries",
