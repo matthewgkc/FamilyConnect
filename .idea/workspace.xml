@@ -5,7 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cbdea7c7-8383-42c6-ab5a-512d6e6fb91f" name="Changes" comment="modified">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/Session.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/database.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/AddMembersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/AddMembersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/CreateGroupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/CreateGroupController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/model/UserAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/model/UserAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/model/UserAccountDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/model/UserAccountDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/model/UserGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/model/UserGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/model/UserGroupDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/model/UserGroupDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/UserGroupTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/UserGroupTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +28,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -46,13 +59,16 @@
     "Application.ChatRoom.executor": "Run",
     "Application.HelloApplication.executor": "Run",
     "Downloaded.Files.Path.Enabled": "true",
+    "JUnit.UserAccountTest.executor": "Run",
+    "JUnit.UserGroupTest.executor": "Run",
+    "Maven.FamilyConnect [test].executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "admin-field",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/georgioangelo/Library/CloudStorage/OneDrive-QueenslandUniversityofTechnology/2024/Semester 1/CAB302/FamilyConnect/src/main/resources/com/example/familyconnect",
     "project.structure.last.edited": "Libraries",
@@ -67,6 +83,32 @@
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.example.familyconnect" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="UserAccountTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FamilyConnect" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="UserAccountTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserGroupTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FamilyConnect" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="UserGroupTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.UserAccountTest" />
+        <item itemvalue="JUnit.UserGroupTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
