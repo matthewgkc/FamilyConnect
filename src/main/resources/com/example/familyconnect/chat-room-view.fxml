@@ -13,6 +13,10 @@
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
 
+
+    <HBox spacing="5.0" alignment="TOP_LEFT">
+        <Button fx:id="homeButton" text="Home" onAction="#home" />
+    </HBox>
     <VBox spacing="5.0" alignment="CENTER">
         <Label text="Enter your username:"/>
         <TextField fx:id="usernameField" promptText="Username"/>
