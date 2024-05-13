@@ -1,5 +1,6 @@
 package com.example.familyconnect;
 
+import com.example.familyconnect.model.UserAccount;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -46,11 +47,22 @@ public class HelloController {
     /**
      * Generates create group page
      */
+
+    public Session userSession;
+
+    public void setSession(Session userSession) {
+        this.userSession = userSession;
+    }
+
     @FXML
     protected void onCreateGroupButtonClick() throws IOException {
         Stage stage = (Stage) createGroupButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("create-group.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+
+        com.example.familyconnect.CreateGroupController controller = fxmlLoader.getController();
+        controller.setSession(new Session(new UserAccount(userSession.getCurrentUserName(), userSession.getCurrentUserPassword())));
+
         String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
         scene.getStylesheets().add(stylesheet);
         stage.setScene(scene);
