@@ -6,13 +6,16 @@
 <?import javafx.scene.control.Button?>
 
 <VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.familyconnect.HelloController">
+      fx:controller="com.example.familyconnect.HelloController"
+      style="-fx-background-color: #F0EBDA; -fx-font-family: Arial;">
 
     <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
 
-    <Button fx:id="userProfileButton" text="User Profile" onAction="#onUserProfileClick"/>
-    <Button fx:id="createGroupButton" text="Create Group Page" onAction="#onCreateGroupButtonClick"/>
-    <Button fx:id="groupDetailsButton" text="Group Details Page" onAction="#onGroupDetailsButtonClick"/>
+    <Button fx:id="userProfileButton" text="User Profile" onAction="#onUserProfileClick" style="-fx-font-size: 14;"/>
+    <Button fx:id="createGroupButton" text="Create Group Page" onAction="#onCreateGroupButtonClick" style="-fx-font-size: 14;"/>
+    <Button fx:id="groupDetailsButton" text="Group Details Page" onAction="#onGroupDetailsButtonClick" style="-fx-font-size: 14;"/>
+    <Button fx:id="contactPageButton" text="Contact Page" onAction="#onContactPageClick" style="-fx-font-size: 14;"/>
+    <Button fx:id="settingsPageButton" text="Settings Page" onAction="#onSettingsPageClick" style="-fx-font-size: 14;"/>
 </VBox>
