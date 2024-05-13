@@ -1,29 +1,58 @@
 .root {
     -fx-font-size: 14px;
-    -fx-font-family: arial, sans-serif;
+    -fx-font-family: "Roboto", sans-serif;
     -fx-background-color: #F0EBD8;
-    -fx-font-color: #3E5C76;
+    -fx-text-fill: #3E5C76;
 }
+
 .mainContainer {
-    -fx-background-color: #3E5C76;
+    -fx-background-color: #2C3E50;
     -fx-hgap: 20px;
     -fx-padding: 40px;
-
-    -fx-background-color: #1D2D44;
     -fx-background-radius: 20px;
-
     -fx-border-radius: 20px;
     -fx-border-width: 3px;
-    -fx-border-color: #0D1321;
+    -fx-border-color: #1D2D44;
 }
+
 .label {
-    -fx-background-color: #3E5C76;
     -fx-background-color: #F0EBD8;
     -fx-background-radius: 20px;
-    -fx-border-radius: 20px;
-    -fx-border-width: 3px;
-    -fx-border-color: #F0EBD8;
+    -fx-text-fill: #3E5C76;
 }
+
 .choice {
-    -fx-color: #3E5C76;
+    -fx-text-fill: #3E5C76;
+}
+
+.button {
+    -fx-background-color: #3E5C76;
+    -fx-background-radius: 5px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 8px 16px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.7) , 2,0,0,1 );
+}
+
+.button:hover {
+    -fx-background-color: #5C7F9F;
+}
+
+.textField {
+    -fx-background-color: #F0EBD8;
+    -fx-border-color: #3E5C76;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+    -fx-text-fill: #3E5C76;
+}
+
+.listView {
+    -fx-background-color: #F0EBD8;
+}
+
+.imageView {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.6), 10, 0, 0, 0);
+    -fx-background-color: white;
+    -fx-background-radius: 50%;
 }
