@@ -19,8 +19,7 @@ public class UserAccountDAO {
                             + "id INTEGER PRIMARY KEY AUTOINCREMENT, "
                             + "userName VARCHAR NOT NULL, "
                             + "password STRING NOT NULL, "
-                            + "groupId INTEGER, "
-                            + "FOREIGN KEY (groupId) REFERENCES userGroup(groupId)"
+                            + "groupId INTEGER"
                             + ")"
             );
         } catch (SQLException ex) {
@@ -48,8 +47,10 @@ public class UserAccountDAO {
             );
             updateAccount.setString(1, userAccount.getUserName());
             updateAccount.setString(2, userAccount.getPassword());
-            updateAccount.setInt(3, userAccount.getGroupId()); // Was causing an error
-            updateAccount.setInt(4, userAccount.getId()); // Was causing an error
+            updateAccount.setInt(3, userAccount.getGroupId());
+            updateAccount.setInt(4, userAccount.getId());
+            System.out.println(updateAccount);
+
             updateAccount.execute();
         } catch (SQLException ex) {
             System.err.println(ex);
@@ -127,7 +128,8 @@ public class UserAccountDAO {
                 return new UserAccount(
                         rs.getInt("id"),
                         rs.getString("userName"),
-                        rs.getString("password")
+                        rs.getString("password"),
+                        rs.getInt("groupId")
                 );
             }
         } catch (SQLException e) {

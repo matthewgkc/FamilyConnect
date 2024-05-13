@@ -17,7 +17,8 @@ public class UserGroupDAO {
             createTable.execute(
                     "CREATE TABLE IF NOT EXISTS userGroup ("
                             + "groupId INTEGER PRIMARY KEY, "
-                            + "groupName VARCHAR NOT NULL"
+                            + "groupName VARCHAR NOT NULL,"
+                            + "groupAdmin VARCHAR NOT NULL"
                             + ")"
             );
         } catch (SQLException ex) {
@@ -28,9 +29,10 @@ public class UserGroupDAO {
     public void insert(UserGroup userGroup) {
         try {
             PreparedStatement insertAccount = connection.prepareStatement(
-                    "INSERT INTO userGroup (groupName) VALUES (?)"
+                    "INSERT INTO userGroup (groupName, groupAdmin) VALUES (?, ?)"
             );
             insertAccount.setString(1, userGroup.getGroupName());
+            insertAccount.setString(2, userGroup.getGroupAdmin());
             insertAccount.execute();
         } catch (SQLException ex) {
             System.err.println(ex);
@@ -40,14 +42,12 @@ public class UserGroupDAO {
     public void update(UserGroup userGroup) {
         try {
             PreparedStatement updateAccount = connection.prepareStatement(
-                    "UPDATE userGroup SET groupName = ? WHERE groupId = ?" // ", WHERE id = ?" (error)
+                    "UPDATE userGroup SET groupName = ?, groupAdmin = ? WHERE groupId = ?" // ", WHERE id = ?" (error)
             );
             updateAccount.setString(1, userGroup.getGroupName());
-            updateAccount.setInt(2, userGroup.getGroupId()); // Was causing an error
+            updateAccount.setString(2, userGroup.getGroupAdmin());
+            updateAccount.setInt(3, userGroup.getGroupId()); // Was causing an error
             updateAccount.execute();
-
-            System.out.println(userGroup.getGroupName());
-            System.out.println(userGroup.getGroupId());
 
 
         } catch (SQLException ex) {
@@ -88,7 +88,8 @@ public class UserGroupDAO {
                 groups.add(
                         new UserGroup(
                                 rs.getInt("groupId"),
-                                rs.getString("groupName")
+                                rs.getString("groupName"),
+                                rs.getString("groupAdmin")
                         )
                 );
             }
@@ -105,8 +106,9 @@ public class UserGroupDAO {
             ResultSet rs = getAccount.executeQuery();
             if (rs.next()) {
                 return new UserGroup(
-                        rs.getInt("groupId"),
-                        rs.getString("userName")
+                        groupId,
+                        rs.getString("groupName"),
+                        rs.getString("groupAdmin")
                 );
             }
         } catch (SQLException ex) {
@@ -117,13 +119,14 @@ public class UserGroupDAO {
 
     public UserGroup getByGroupName(String groupName) {
         try {
-            PreparedStatement statement = connection.prepareStatement("SELECT groupId FROM userGroup WHERE groupName = ?");
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM userGroup WHERE groupName = ?");
             statement.setString(1, groupName);
             ResultSet rs = statement.executeQuery();
             if (rs.next()) {
                 return new UserGroup(
                         rs.getInt("groupId"),
-                        groupName
+                        groupName,
+                        rs.getString("groupAdmin")
                 );
             }
         } catch (SQLException e) {

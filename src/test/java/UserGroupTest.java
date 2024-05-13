@@ -10,7 +10,7 @@ public class UserGroupTest {
 
     @BeforeEach
     void setUp() {
-        usergroup = new UserGroup("John's Group");
+        usergroup = new UserGroup("John's Group", "John");
     }
     @Test
     public void testGetId() {
@@ -25,6 +25,16 @@ public class UserGroupTest {
     public void testSetGroupName() {
         usergroup.setGroupName("Jane's Group");
         assertEquals("Jane's Group", usergroup.getGroupName());
+    }
+
+    @Test
+    public void testGetGroupAdmin() {
+        assertEquals("John", usergroup.getGroupAdmin());
+    }
+    @Test
+    public void testSetGroupAdmin() {
+        usergroup.setGroupAdmin("Jane");
+        assertEquals("Jane", usergroup.getGroupAdmin());
     }
 
 }
