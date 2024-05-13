@@ -1,5 +1,7 @@
 package com.example.familyconnect;
 
+import com.example.familyconnect.model.UserAccount;
+import com.example.familyconnect.model.UserAccountDAO;
 import com.example.familyconnect.model.UserGroupDAO;
 import com.example.familyconnect.model.UserGroup;
 import javafx.fxml.FXML;
@@ -33,6 +35,12 @@ public class CreateGroupController {
     @FXML
     private Button backHomeButton;
 
+    public Session userSession;
+
+    public void setSession(Session userSession) {
+        this.userSession = userSession;
+    }
+
     /**
      *Sends user back to home-page
      */
@@ -53,9 +61,22 @@ public class CreateGroupController {
     private void createGroupAndProceed() {
         String groupName = groupNameField.getText();
         if (!groupName.isEmpty()) {
+            //Insert new group
             UserGroupDAO userGroupDAO = new UserGroupDAO();
-            UserGroup usergroup = new UserGroup(groupName);
+            UserGroup usergroup = new UserGroup(groupName, userSession.getCurrentUserName());
             userGroupDAO.insert(usergroup);
+
+            UserAccountDAO userAccountDAO = new UserAccountDAO();
+
+            //Get group ID (You need to get from DAO) and set it to current user (same thing)
+            UserGroup currentGroup = userGroupDAO.getByGroupName(usergroup.getGroupName());
+            UserAccount currentUser = userAccountDAO.getByUsername(userSession.getCurrentUserName());
+            currentUser.setGroupId(currentGroup.getGroupId());
+            userAccountDAO.update(currentUser);
+
+            //update userSession
+            userSession = new Session(currentUser);
+
             loadAddMembersPage(groupName);
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -77,6 +98,7 @@ public class CreateGroupController {
             Parent root = loader.load();
             com.example.familyconnect.AddMembersController controller = loader.getController();
             controller.setGroup(groupName);
+            controller.setSession(userSession);
             Stage stage = (Stage) groupNameField.getScene().getWindow();
             Scene scene = new Scene(root, 300, 450);
             stage.setTitle("Family Connect");
