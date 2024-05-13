@@ -12,9 +12,6 @@
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
-    <HBox alignment="CENTER">
-        <Button fx:id="backHomeButton" text="Home" onAction="#backtoHome"/>
-    </HBox>
 
     <VBox spacing="5.0" alignment="CENTER">
         <Label text="Enter your username:"/>
