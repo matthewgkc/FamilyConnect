@@ -4,7 +4,6 @@ public class UserAccount {
     private int id;
     private String userName;
     private String password;
-
     private int groupId;
 
     public UserAccount(int id, String userName, String password, int groupId) {

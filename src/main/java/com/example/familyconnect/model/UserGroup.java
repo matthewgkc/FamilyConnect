@@ -4,14 +4,17 @@ public class UserGroup {
     private int groupId;
     private String groupName;
 
-    public UserGroup(int groupId, String groupName) {
+    private String groupAdmin;
+
+    public UserGroup(int groupId, String groupName, String groupAdmin) {
         this.groupId = groupId;
         this.groupName = groupName;
+        this.groupAdmin = groupAdmin;
     }
 
-    public UserGroup(String groupName) {
-        // Since the id is auto-incremented, it is nice to have a constructor without it
+    public UserGroup(String groupName, String groupAdmin) {
         this.groupName = groupName;
+        this.groupAdmin = groupAdmin;
     }
 
     public int getGroupId() {
@@ -30,11 +33,20 @@ public class UserGroup {
         this.groupName = groupName;
     }
 
+    public String getGroupAdmin() {
+        return groupAdmin;
+    }
+
+    public void setGroupAdmin(String groupAdmin) {
+        this.groupAdmin = groupAdmin;
+    }
+
     @Override
     public String toString() {
         return "UserGroup{" +
                 "id=" + groupId +
-                ", userName='" + groupName +
+                ", groupName=" + groupName +
+                ", groupAdmin=" + groupAdmin +
                 '}';
     }
 }
