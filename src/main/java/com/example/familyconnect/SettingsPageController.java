@@ -14,9 +14,6 @@ public class SettingsPageController {
     private Button backButton;
 
     @FXML
-    private Button aboutButton;
-
-    @FXML
     protected void goHomeClick() throws IOException {
         Stage stage = (Stage) backButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
@@ -32,7 +29,7 @@ public class SettingsPageController {
     @FXML
     protected void editProfileClick() throws IOException {
         Stage stage = (Stage) backButton.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("edit-profile-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("user-profile-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
         stage.setScene(scene);
     }
@@ -54,20 +51,45 @@ public class SettingsPageController {
     }
 
     @FXML
-    protected void backButtonClick() throws IOException {
+    protected void notificationClick() throws IOException {
         Stage stage = (Stage) backButton.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("notification-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
-        String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
-        scene.getStylesheets().add(stylesheet);
+        stage.setScene(scene);
+    }
+
+    @FXML
+    protected void languagePreferenceClick() throws IOException {
+        Stage stage = (Stage) backButton.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("language-preference-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+        stage.setScene(scene);
+    }
+
+    @FXML
+    protected void helpClick() throws IOException {
+        Stage stage = (Stage) backButton.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("help-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+        stage.setScene(scene);
+    }
+
+    @FXML
+    protected void aboutClick() throws IOException {
+        Stage stage = (Stage) backButton.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("about-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+        stage.setScene(scene);
+    }
+
+    @FXML
+    protected void backClick() throws IOException {
+        Stage stage = (Stage) backButton.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("settings-page-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
         stage.setScene(scene);
     }
 
     public void addProfilePictureClick(ActionEvent actionEvent) {
     }
-
-    public void setAboutButton(Button aboutButton) {
-        this.aboutButton = aboutButton;
-    }
 }
-

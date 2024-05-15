@@ -4,6 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.VBox?>
 
+<?xml-stylesheet type="text/css" href="stylesheet.css"?>
 
 <?import javafx.scene.layout.HBox?>
 <VBox alignment="TOP_LEFT" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
