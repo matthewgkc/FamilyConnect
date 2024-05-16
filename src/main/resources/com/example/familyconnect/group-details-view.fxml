@@ -19,7 +19,7 @@
             <Button fx:id="backHomeButton" text="Home" onAction="#backtoHome"/>
         </HBox>
         <HBox alignment="CENTER">
-            <Label text="Family Name"/>
+            <Label fx:id="groupNameLabel"/>
         </HBox>
     </HBox>
     <VBox alignment="CENTER">
