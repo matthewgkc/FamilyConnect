@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -37,6 +38,9 @@ public class GroupDetailsController {
     private Label groupNameLabel;
 
     @FXML
+    private ListView<String> familyListView;
+
+    @FXML
     public Session userSession;
 
     //        groupNameTextField.setText(userSession.getCurrentUserGroupName());
@@ -51,12 +55,14 @@ public class GroupDetailsController {
 
         System.out.println("group to get group name from: " + userGroup.getGroupName());
 
-        groupNameLabel.setText(userGroup.getGroupName());
+        if((userGroup.getGroupName()) == null) {
+            groupNameLabel.setText("You are not currently in a group");
+        }
+        else {
+            groupNameLabel.setText(userGroup.getGroupName());
+            familyListView.getItems().addAll(userSession.getGroupUserList());
+        }
     }
-
-    /**
-     *Sends the user back to the home-page
-     */
     @FXML
     protected void backtoHome() throws IOException {
         Stage stage = (Stage) backHomeButton.getScene().getWindow();
