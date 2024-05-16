@@ -84,7 +84,7 @@ public class HelloController {
         Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
 
         com.example.familyconnect.GroupDetailsController controller = fxmlLoader.getController();
-        controller.setSession(new Session(new UserAccount(userSession.getCurrentUserName(), userSession.getCurrentUserPassword())));
+        controller.setSession(userSession);
 
         String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
         scene.getStylesheets().add(stylesheet);
@@ -137,6 +137,4 @@ public class HelloController {
         Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
         stage.setScene(scene);
     }
-
-
 }

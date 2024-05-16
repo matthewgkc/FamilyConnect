@@ -27,6 +27,6 @@
         <ListView fx:id="familyListView" maxWidth="250" />
     </VBox>
     <HBox alignment="CENTER">
-        <Button fx:id="inviteNewMemberButton" text="Invite New Member" onAction="#sendToAddMembersPage"/>
+        <Button fx:id="addMemberButton" text="Invite New Member" onAction="#sendToAddMembersPage"/>
     </HBox>
 </VBox>

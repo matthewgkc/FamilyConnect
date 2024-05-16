@@ -36,6 +36,7 @@ public class GroupDetailsController {
     @FXML
     private Label groupNameTextField;
 
+    @FXML
     public Session userSession;
 
     public void setSession(Session userSession) {
@@ -61,7 +62,7 @@ public class GroupDetailsController {
 
     @FXML
     protected void sendToAddMembersPage() throws IOException {
-        Stage stage = (Stage) backHomeButton.getScene().getWindow();
+        Stage stage = (Stage) addMemberButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("add-members.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
 
@@ -71,6 +72,10 @@ public class GroupDetailsController {
         String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
         scene.getStylesheets().add(stylesheet);
         stage.setScene(scene);
+    }
+
+    public void initialize() {
+        groupNameTextField.setText(userSession.getCurrentUserGroupName());
     }
 }
 
