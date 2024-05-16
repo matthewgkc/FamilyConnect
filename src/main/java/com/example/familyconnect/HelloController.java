@@ -58,6 +58,11 @@ public class HelloController {
      */
     @FXML
     private Button settingsPageButton;
+    /**
+     * Generates create group page
+     */
+    @FXML
+    private Button contactButton;
 
 
     @FXML
@@ -134,5 +139,15 @@ public class HelloController {
         stage.setScene(scene);
     }
 
+    @FXML
+    public void onContactClick(ActionEvent actionEvent) throws IOException {
+        Stage stage = (Stage) contactButton.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("contact-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+        stage.setScene(scene);
+    }
 
+    public void setContactButton(Button contactButton) {
+        this.contactButton = contactButton;
+    }
 }
