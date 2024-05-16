@@ -39,6 +39,7 @@ public class CreateGroupController {
 
     public void setSession(Session userSession) {
         this.userSession = userSession;
+        System.out.println("final Login: " + userSession.getCurrentUserAccount());
     }
 
     /**
