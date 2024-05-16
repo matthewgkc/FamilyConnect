@@ -34,13 +34,24 @@ public class GroupDetailsController {
      * Label that displays the user's Group Name
      */
     @FXML
-    private Label groupNameTextField;
+    private Label groupNameLabel;
 
     @FXML
     public Session userSession;
 
+    //        groupNameTextField.setText(userSession.getCurrentUserGroupName());
+
     public void setSession(Session userSession) {
+        UserGroupDAO userGroupDAO = new UserGroupDAO();
+
         this.userSession = userSession;
+        System.out.println(userSession.getCurrentUserAccount());
+
+        UserGroup userGroup = userGroupDAO.getById(userSession.getCurrentUserAccount().getGroupId());
+
+        System.out.println("group to get group name from: " + userGroup.getGroupName());
+
+        groupNameLabel.setText(userGroup.getGroupName());
     }
 
     /**
@@ -74,8 +85,5 @@ public class GroupDetailsController {
         stage.setScene(scene);
     }
 
-    public void initialize() {
-        groupNameTextField.setText(userSession.getCurrentUserGroupName());
-    }
 }
 
