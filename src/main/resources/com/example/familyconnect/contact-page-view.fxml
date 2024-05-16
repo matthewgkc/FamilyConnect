@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.familyconnect.ContactPageController"
+      prefHeight="450.0" prefWidth="300.0">
+    <padding>
+        <Insets top="20.0" left="20.0" right="20.0"/>
+    </padding>
+
+    <HBox alignment="CENTER">
+        <Button text="Back" onAction="#goBackClick"/>
+        <Label text="Contact" />
+    </HBox>
+
+    <VBox alignment="CENTER" spacing="20.0">
+        <Button text="Home" onAction="#goHomeClick"/>
+    </VBox>
+
+    <Button fx:id="addContactButton" text="Add Contact" onAction="#addContactClick"/>
+
+</VBox>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.familyconnect.CreateContactController"
+      prefHeight="450.0" prefWidth="300.0">
+    <padding>
+        <Insets top="20.0" left="20.0" right="20.0"/>
+    </padding>
+
+    <HBox alignment="CENTER">
+        <Button fx:id="backButton" text="Back" onAction="#backClick"/>
+        <Label text="Create a Contact" />
+    </HBox>
+
+    <!-- Leave space for profile picture -->
+    <VBox alignment="CENTER" spacing="10.0">
+        <Label text="First Name"/>
+        <TextField maxWidth="200.0" />
+
+        <Label text="Last Name"/>
+        <TextField maxWidth="200.0" />
+
+        <Label text="Mobile"/>
+        <TextField maxWidth="200.0" />
+
+        <Label text="Email"/>
+        <TextField maxWidth="200.0" />
+
+        <Label text="Address"/>
+        <TextField maxWidth="200.0" />
+
+        <Label text="Birthday"/>
+        <DatePicker maxWidth="200.0" />
+    </VBox>
+
+</VBox>
