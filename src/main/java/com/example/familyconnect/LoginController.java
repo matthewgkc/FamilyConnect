@@ -76,11 +76,15 @@ public class LoginController {
             String username = usernameField.getText();
             String password = passwordField.getText();
 
+            UserAccountDAO userAccountDAO = new UserAccountDAO();
+
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fxmlFile));
             Parent root = fxmlLoader.load();
 
             com.example.familyconnect.HelloController controller = fxmlLoader.getController();
-            controller.setSession(new Session(new UserAccount(username, password)));
+
+            Session session = new Session(userAccountDAO.getByUsername(username));
+            controller.setSession(session);
 
             Stage stage = (Stage) buttonLogin.getScene().getWindow();
             stage.setScene(new Scene(root, 300, 450));

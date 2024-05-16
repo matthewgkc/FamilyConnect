@@ -1,6 +1,7 @@
 package com.example.familyconnect;
 
 import com.example.familyconnect.model.UserAccount;
+import com.example.familyconnect.model.UserAccountDAO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -52,6 +53,7 @@ public class HelloController {
 
     public void setSession(Session userSession) {
         this.userSession = userSession;
+        System.out.println("Now in Home page: " + userSession.getCurrentUserAccount());
     }
     /**
      * Generates create group page
@@ -62,12 +64,16 @@ public class HelloController {
 
     @FXML
     protected void onCreateGroupButtonClick() throws IOException {
+        UserAccountDAO userAccountDAO = new UserAccountDAO();
+
         Stage stage = (Stage) createGroupButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("create-group.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
 
         com.example.familyconnect.CreateGroupController controller = fxmlLoader.getController();
-        controller.setSession(new Session(new UserAccount(userSession.getCurrentUserName(), userSession.getCurrentUserPassword())));
+
+        Session session = new Session(userAccountDAO.getByUsername(userSession.getCurrentUserName()));
+        controller.setSession(session);
 
         String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
         scene.getStylesheets().add(stylesheet);
@@ -79,12 +85,19 @@ public class HelloController {
      */
     @FXML
     protected void onGroupDetailsButtonClick() throws IOException {
+        UserAccountDAO userAccountDAO = new UserAccountDAO();
+
         Stage stage = (Stage) groupDetailsButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("group-details-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
 
         com.example.familyconnect.GroupDetailsController controller = fxmlLoader.getController();
-        controller.setSession(userSession);
+
+        Session session = new Session(userAccountDAO.getByUsername(userSession.getCurrentUserName()));
+
+        System.out.println("Before Group Details: " + session.getCurrentUserAccount());
+
+        controller.setSession(session);
 
         String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
         scene.getStylesheets().add(stylesheet);

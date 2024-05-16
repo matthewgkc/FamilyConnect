@@ -61,6 +61,7 @@ public class UserAccount {
                 "id=" + id +
                 ", userName='" + userName + '\'' +
                 ", password=" + password +
+                ", groupId=" + groupId +
                 '}';
     }
 }
