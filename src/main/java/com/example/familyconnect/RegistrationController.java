@@ -51,6 +51,7 @@ public class RegistrationController {
     @FXML
     public Button buttonRegistration;
 
+
     /**
      *Validates registration from username, password, and password confirmation inputs
      */

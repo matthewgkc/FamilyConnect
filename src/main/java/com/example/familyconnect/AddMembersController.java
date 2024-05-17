@@ -67,9 +67,16 @@ public class AddMembersController {
      */
     @FXML
     protected void backtoHome() throws IOException {
+        UserAccountDAO userAccountDAO = new UserAccountDAO();
         Stage stage = (Stage)this.backHomeButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
         Scene scene = new Scene((Parent)fxmlLoader.load(), 300.0, 450.0);
+
+        com.example.familyconnect.HelloController controller = fxmlLoader.getController();
+
+        Session session = new Session(userAccountDAO.getByUsername(userSession.getCurrentUserName()));
+        controller.setSession(session);
+
         String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
         scene.getStylesheets().add(stylesheet);
         stage.setScene(scene);

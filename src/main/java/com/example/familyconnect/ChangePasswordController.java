@@ -1,5 +1,7 @@
 package com.example.familyconnect;
 
+import com.example.familyconnect.model.UserAccountDAO;
+import com.example.familyconnect.model.UserGroupDAO;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -25,6 +27,12 @@ public class ChangePasswordController {
 
     @FXML
     private Button backButton;
+
+    public Session userSession;
+
+    public void setSession(Session userSession) {
+        this.userSession = userSession;
+    }
 
     @FXML
     protected void confirmClick() {
@@ -68,9 +76,15 @@ public class ChangePasswordController {
 
     @FXML
     protected void backButtonClick() throws IOException {
+        UserAccountDAO userAccountDAO = new UserAccountDAO();
         Stage stage = (Stage) backButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("settings-page-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+
+        com.example.familyconnect.SettingsPageController controller = fxmlLoader.getController();
+        Session session = new Session(userAccountDAO.getByUsername(userSession.getCurrentUserName()));
+        controller.setSession(session);
+
         String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
         scene.getStylesheets().add(stylesheet);
         stage.setScene(scene);
