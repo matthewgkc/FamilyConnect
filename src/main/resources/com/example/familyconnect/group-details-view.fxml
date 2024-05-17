@@ -28,5 +28,6 @@
     </VBox>
     <HBox alignment="CENTER">
         <Button fx:id="addMemberButton" text="Invite New Member" onAction="#sendToAddMembersPage"/>
+        <Button fx:id="removeMemberButton" text="Remove Members from group" onAction="#sendToRemoveMembersPage"/>
     </HBox>
 </VBox>

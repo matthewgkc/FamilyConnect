@@ -19,10 +19,11 @@ public class UserAccount {
         this.password = password;
     }
 
-    public UserAccount(String userName, String password) {
+    public UserAccount(String userName, String password, int groupId) {
         // Since the id is auto-incremented, it is nice to have a constructor without it
         this.userName = userName;
         this.password = password;
+        this.groupId = groupId;
     }
 
     public int getId() {

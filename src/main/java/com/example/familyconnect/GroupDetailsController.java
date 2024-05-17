@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -31,10 +32,19 @@ public class GroupDetailsController {
     private Button addMemberButton;
 
     /**
+     * Button that sends the user to the remove-members page
+     */
+    @FXML
+    private Button removeMemberButton;
+
+    /**
      * Label that displays the user's Group Name
      */
     @FXML
     private Label groupNameLabel;
+
+    @FXML
+    private ListView<String> familyListView;
 
     @FXML
     public Session userSession;
@@ -47,24 +57,29 @@ public class GroupDetailsController {
         this.userSession = userSession;
         System.out.println(userSession.getCurrentUserAccount());
 
-        UserGroup userGroup = userGroupDAO.getById(userSession.getCurrentUserAccount().getGroupId());
+        try {
+            UserGroup userGroup = userGroupDAO.getById(userSession.getCurrentUserAccount().getGroupId());
 
-        System.out.println("group to get group name from: " + userGroup.getGroupName());
+            System.out.println("group to get group name from: " + userGroup.getGroupName());
 
-        groupNameLabel.setText(userGroup.getGroupName());
+            groupNameLabel.setText(userGroup.getGroupName());
+            familyListView.getItems().addAll(userSession.getGroupUserList());
+        }
+        catch(NullPointerException exception) {
+            groupNameLabel.setText("You are not currently in a group");
+        }
+
     }
-
-    /**
-     *Sends the user back to the home-page
-     */
     @FXML
     protected void backtoHome() throws IOException {
+        UserAccountDAO userAccountDAO = new UserAccountDAO();
         Stage stage = (Stage) backHomeButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
 
         com.example.familyconnect.HelloController controller = fxmlLoader.getController();
-        controller.setSession(new Session(new UserAccount(userSession.getCurrentUserName(), userSession.getCurrentUserPassword())));
+        Session session = new Session(userAccountDAO.getByUsername(userSession.getCurrentUserName()));
+        controller.setSession(session);
 
         String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
         scene.getStylesheets().add(stylesheet);
@@ -73,12 +88,30 @@ public class GroupDetailsController {
 
     @FXML
     protected void sendToAddMembersPage() throws IOException {
+        UserAccountDAO userAccountDAO = new UserAccountDAO();
         Stage stage = (Stage) addMemberButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("add-members.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
 
         com.example.familyconnect.AddMembersController controller = fxmlLoader.getController();
-        controller.setSession(new Session(new UserAccount(userSession.getCurrentUserName(), userSession.getCurrentUserPassword())));
+        Session session = new Session(userAccountDAO.getByUsername(userSession.getCurrentUserName()));
+        controller.setSession(session);
+
+        String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
+        scene.getStylesheets().add(stylesheet);
+        stage.setScene(scene);
+    }
+
+    @FXML
+    protected void sendToRemoveMembersPage() throws IOException {
+        UserAccountDAO userAccountDAO = new UserAccountDAO();
+        Stage stage = (Stage) removeMemberButton.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("remove-members.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+
+        com.example.familyconnect.RemoveMembersController controller = fxmlLoader.getController();
+        Session session = new Session(userAccountDAO.getByUsername(userSession.getCurrentUserName()));
+        controller.setSession(session);
 
         String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
         scene.getStylesheets().add(stylesheet);

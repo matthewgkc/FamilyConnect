@@ -3,6 +3,7 @@ package com.example.familyconnect.model;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import javafx.scene.control.ListView;
 
 public class UserAccountDAO {
     private Connection connection;
@@ -30,10 +31,11 @@ public class UserAccountDAO {
     public void insert(UserAccount userAccount) {
         try {
             PreparedStatement insertAccount = connection.prepareStatement(
-                    "INSERT INTO userAccounts (userName, password) VALUES (?, ?)"
+                    "INSERT INTO userAccounts (userName, password, groupId) VALUES (?, ?, ?)"
             );
             insertAccount.setString(1, userAccount.getUserName());
             insertAccount.setString(2, userAccount.getPassword());
+            insertAccount.setInt(3, userAccount.getGroupId());
             insertAccount.execute();
         } catch (SQLException ex) {
             System.err.println(ex);
@@ -137,6 +139,24 @@ public class UserAccountDAO {
         }
         return null;
     }
+
+    public List<String> getUserListByGroupId(int groupId) {
+        List<String> usernames = new ArrayList<>();
+        try {
+            PreparedStatement statement = connection.prepareStatement("SELECT userName FROM userAccounts WHERE groupId = ?");
+            statement.setInt(1, groupId);
+            ResultSet rs = statement.executeQuery();
+            while (rs.next()) {
+                usernames.add(
+                        new String(rs.getString("userName"))
+                );
+            }
+        } catch (SQLException ex) {
+            System.err.println(ex);
+        }
+        return usernames;
+    }
+
     public void close() {
         try {
             connection.close();
