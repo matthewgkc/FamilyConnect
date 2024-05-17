@@ -51,6 +51,7 @@ public class RegistrationController {
     @FXML
     public Button buttonRegistration;
 
+
     /**
      *Validates registration from username, password, and password confirmation inputs
      */
@@ -74,7 +75,7 @@ public class RegistrationController {
                     statusLabel.setText("Username already exists.");
                 }
                 else{
-                    userAccountDAO.insert(new UserAccount(username, password));
+                    userAccountDAO.insert(new UserAccount(username, password, 0));
                     // statusLabel.setText("Registration successful!");         ## Was used for testing
                     loadPage("start.fxml");
                 }

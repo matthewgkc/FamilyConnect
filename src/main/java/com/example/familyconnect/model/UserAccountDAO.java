@@ -31,10 +31,11 @@ public class UserAccountDAO {
     public void insert(UserAccount userAccount) {
         try {
             PreparedStatement insertAccount = connection.prepareStatement(
-                    "INSERT INTO userAccounts (userName, password) VALUES (?, ?)"
+                    "INSERT INTO userAccounts (userName, password, groupId) VALUES (?, ?, ?)"
             );
             insertAccount.setString(1, userAccount.getUserName());
             insertAccount.setString(2, userAccount.getPassword());
+            insertAccount.setInt(3, userAccount.getGroupId());
             insertAccount.execute();
         } catch (SQLException ex) {
             System.err.println(ex);

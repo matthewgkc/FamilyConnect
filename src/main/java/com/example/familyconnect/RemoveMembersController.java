@@ -2,8 +2,6 @@ package com.example.familyconnect;
 
 import com.example.familyconnect.model.UserAccount;
 import com.example.familyconnect.model.UserAccountDAO;
-import com.example.familyconnect.model.UserGroup;
-import com.example.familyconnect.model.UserGroupDAO;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -14,21 +12,28 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
-
-/**
- *Controller for AddMembers view
- */
-public class AddMembersController {
-
+public class RemoveMembersController {
 
     /**
-     *Name of the member to add
+     * Button to return the user to the home page
+     */
+    @FXML
+    private Button backHomeButton;
+
+    @FXML
+    private Button removeMemberButton;
+
+    /**
+     *Name of the member to remove
      */
     @FXML
     private TextField memberNameField;
 
+    @FXML
+    private Label userNameLabel;
+
     /**
-     *Label that displays when a member is successfully added
+     *Label that displays when a member is successfully removed
      */
     @FXML
     private Label successLabel;
@@ -39,31 +44,16 @@ public class AddMembersController {
     @FXML
     private Label errorLabel;
 
-    /**
-     *String for the name of the created group
-     */
-    private String groupName;
-
-    /**
-     *Label to display the group name to add members to
-     */
-    @FXML
-    private Label groupNameLabel;
-
-    /**
-     *Button to send user back to home-page
-     */
-    @FXML
-    private Button backHomeButton;
-
     public Session userSession;
 
     public void setSession(Session userSession) {
         this.userSession = userSession;
     }
 
+
     /**
-     *Sends user back to home-page
+     * Process to return to the home page when back button is pressed
+     * @throws IOException
      */
     @FXML
     protected void backtoHome() throws IOException {
@@ -73,7 +63,6 @@ public class AddMembersController {
         Scene scene = new Scene((Parent)fxmlLoader.load(), 300.0, 450.0);
 
         com.example.familyconnect.HelloController controller = fxmlLoader.getController();
-
         Session session = new Session(userAccountDAO.getByUsername(userSession.getCurrentUserName()));
         controller.setSession(session);
 
@@ -82,27 +71,11 @@ public class AddMembersController {
         stage.setScene(scene);
     }
 
-    /**
-     * Add group to database
-     * @param groupName The name of the group
-     */
-    public void setGroup(String groupName) {
-        this.groupName = groupName;
-        if (groupNameLabel != null) {
-            groupNameLabel.setText(groupName);
-        }
-    }
-
-    /**
-     * Check for valid members and create group
-     */
     @FXML
-    private void createGroupAndProceed() {
+    private void removeMemberProcess() {
         String memberName = memberNameField.getText();
         UserAccountDAO userAccountDAO = new UserAccountDAO();
         UserAccount userAccount = userAccountDAO.getByUsername(memberName);
-        UserGroupDAO usergroupDAO = new UserGroupDAO();
-        UserGroup usergroup = usergroupDAO.getByGroupName(groupName);
 
         if (memberName.isEmpty()) {
             errorLabel.setText("MEMBER NAME CANNOT BE BLANK!!!!");
@@ -114,25 +87,23 @@ public class AddMembersController {
             errorLabel.setVisible(true);
             successLabel.setVisible(false);
         }
-        else if (userAccount.getGroupId() != 0 && userAccount.getGroupId() != usergroup.getGroupId()) {
-            UserGroup failgroup = usergroupDAO.getById(userAccount.getGroupId());
-            errorLabel.setText("User is already in a group (" + failgroup.getGroupName() + ").");
-            errorLabel.setVisible(true);
-            successLabel.setVisible(false);
-        }
-        else if (userAccount.getGroupId() == usergroup.getGroupId()) {
-            errorLabel.setText("User is already in your group");
+        else if (userAccount.getGroupId() != userSession.getCurrentUserGroupId()) {
+            System.out.println("Entered User's Group ID is " + userAccount.getGroupId());
+            System.out.println("Current User's Group ID is " + userSession.getCurrentUserGroupId());
+
+            errorLabel.setText("That user is not in your group.");
             errorLabel.setVisible(true);
             successLabel.setVisible(false);
         }
         else {
-            userAccount.setGroupId(usergroup.getGroupId());
+            userAccount.setGroupId(0);
             userAccountDAO.update(userAccount);
 
-            successLabel.setText(memberName + " has been successfully added to " + groupName);
+            successLabel.setText(memberName + " has been successfully removed from your group");
             successLabel.setVisible(true);
             errorLabel.setVisible(false);
         }
         memberNameField.clear();
     }
+
 }

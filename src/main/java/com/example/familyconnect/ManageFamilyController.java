@@ -27,6 +27,12 @@ public class ManageFamilyController {
     @FXML
     private Label successLabel;
 
+    public Session userSession;
+
+    public void setSession(Session userSession) {
+        this.userSession = userSession;
+    }
+
     private List<String> addedMembers;
 
     public ManageFamilyController() {
@@ -35,9 +41,15 @@ public class ManageFamilyController {
 
     @FXML
     protected void backButtonClick() throws IOException {
+        UserAccountDAO userAccountDAO = new UserAccountDAO();
         Stage stage = (Stage) backButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("settings-page-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+
+        com.example.familyconnect.SettingsPageController controller = fxmlLoader.getController();
+        Session session = new Session(userAccountDAO.getByUsername(userSession.getCurrentUserName()));
+        controller.setSession(session);
+
         String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
         scene.getStylesheets().add(stylesheet);
         stage.setScene(scene);

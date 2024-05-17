@@ -114,9 +114,15 @@ public class HelloController {
      */
     @FXML
     protected void onUserProfileClick() throws IOException {
+        UserAccountDAO userAccountDAO = new UserAccountDAO();
         Stage stage = (Stage) userProfileButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("user-profile-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+
+        com.example.familyconnect.UserProfileController controller = fxmlLoader.getController();
+        Session session = new Session(userAccountDAO.getByUsername(userSession.getCurrentUserName()));
+        controller.setSession(session);
+
         String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
         scene.getStylesheets().add(stylesheet);
         stage.setScene(scene);
@@ -127,9 +133,15 @@ public class HelloController {
      */
     @FXML
     protected void onChatRoomButtonClick() throws IOException {
+        UserAccountDAO userAccountDAO = new UserAccountDAO();
         Stage stage = (Stage) chatRoomButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("chat-room-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+
+        com.example.familyconnect.ChatController controller = fxmlLoader.getController();
+        Session session = new Session(userAccountDAO.getByUsername(userSession.getCurrentUserName()));
+        controller.setSession(session);
+
         String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
         scene.getStylesheets().add(stylesheet);
         stage.setScene(scene);
@@ -140,9 +152,15 @@ public class HelloController {
      */
     @FXML
     protected void onDigitalUsageOverviewClick() throws IOException {
+        UserAccountDAO userAccountDAO = new UserAccountDAO();
         Stage stage = (Stage)this.overviewButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("individual-overview.fxml"));
         Scene scene = new Scene((Parent)fxmlLoader.load(), 300.0, 450.0);
+
+        com.example.familyconnect.OverviewController controller = fxmlLoader.getController();
+        Session session = new Session(userAccountDAO.getByUsername(userSession.getCurrentUserName()));
+        controller.setSession(session);
+
         String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
         scene.getStylesheets().add(stylesheet);
         stage.setScene(scene);
@@ -150,17 +168,29 @@ public class HelloController {
 
     @FXML
     public void onSettingsPageClick(ActionEvent actionEvent) throws IOException {
+        UserAccountDAO userAccountDAO = new UserAccountDAO();
         Stage stage = (Stage) settingsPageButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("settings-page-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+
+        com.example.familyconnect.SettingsPageController controller = fxmlLoader.getController();
+        Session session = new Session(userAccountDAO.getByUsername(userSession.getCurrentUserName()));
+        controller.setSession(session);
+
         stage.setScene(scene);
     }
 
     @FXML
     public void onContactClick(ActionEvent actionEvent) throws IOException {
+        UserAccountDAO userAccountDAO = new UserAccountDAO();
         Stage stage = (Stage) contactButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("contact-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+
+        com.example.familyconnect.ContactController controller = fxmlLoader.getController();
+        Session session = new Session(userAccountDAO.getByUsername(userSession.getCurrentUserName()));
+        controller.setSession(session);
+
         stage.setScene(scene);
     }
 
