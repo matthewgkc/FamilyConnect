@@ -23,5 +23,11 @@
         <Button fx:id="overviewButton" text="Digital Usage Overview" onAction="#onDigitalUsageOverviewClick"/>
         <Button fx:id="settingsPageButton" text="Settings" onAction="#onSettingsPageClick"/>
         <Button fx:id="contactButton" text="Contact" onAction="#onContactClick"/>
+        <HBox alignment="TOP_RIGHT" styleClass="profileContainer">
+            <Button fx:id="logoutButton" text="Logout" onAction="#onLogoutButtonClick" style="-fx-background-color: #fe8547;"/>
+        </HBox>
     </VBox>
+
+
+
 </VBox>

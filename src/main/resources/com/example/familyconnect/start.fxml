@@ -7,6 +7,7 @@
 <?import javafx.scene.layout.*?>
 
 <VBox alignment="CENTER" spacing="10" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.familyconnect.StartController">
+    <Label fx:id="logoutMessageLabel" text="" style="-fx-text-fill: red; -fx-background-color: #ffffff;"/>
     <Button fx:id="loginButton" text="Login" onAction="#goToLoginPage" />
     <Button fx:id="registerButton" text="Register" onAction="#goToRegistrationPage" />
 </VBox>

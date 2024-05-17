@@ -46,6 +46,13 @@ public class HelloController {
     @FXML
     private Button overviewButton;
 
+
+    /**
+     * Button to log a user out
+     */
+    @FXML
+    private Button logoutButton;
+
     /**
      * Generates create group page
      */
@@ -163,6 +170,23 @@ public class HelloController {
         Stage stage = (Stage) contactButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("contact-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+        String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
+        scene.getStylesheets().add(stylesheet);
+        stage.setScene(scene);
+    }
+
+    @FXML
+    protected void onLogoutButtonClick() throws IOException {
+        userSession = null;
+        Stage stage = (Stage) logoutButton.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("start.fxml"));
+        Parent root = fxmlLoader.load();
+
+        // Get the controller associated with the new FXML
+        StartController startController = fxmlLoader.getController();
+        startController.setLogoutMessage("You have been logged out.");
+
+        Scene scene = new Scene(root, HelloApplication.WIDTH, HelloApplication.HEIGHT);
         String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
         scene.getStylesheets().add(stylesheet);
         stage.setScene(scene);
