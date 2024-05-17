@@ -12,5 +12,5 @@
     <PasswordField fx:id="passwordField" promptText="Password" />
     <PasswordField fx:id="confirmPasswordField" promptText="Confirm Password" />
     <Button fx:id="buttonRegistration" text="Register" onAction="#registerButtonClicked" />
-    <Label fx:id="statusLabel" />
+    <Label fx:id="statusLabel" style= "-fx-font-size: 10px; -fx-text-fill: #000000; -fx-background-color: #ffffff;"/>
 </VBox>
