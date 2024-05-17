@@ -19,12 +19,11 @@
 
     <Label text="Individual Overview" style="-fx-font-size: 20px; -fx-font-weight: bold;" styleClass="overview-label"/>
 
-
     <VBox spacing="2">
         <Label text="User Details:" style="-fx-font-size: 12px; -fx-font-weight: bold;"/>
-        <Label text="First Name:" style="-fx-font-size: 10px;"/>
-        <Label text="Last Name:" style="-fx-font-size: 10px;"/>
-        <Label text="Age:" style="-fx-font-size: 10px;"/>
+        <Label fx:id="firstNameLabel" text="First Name:" style="-fx-font-size: 10px;"/>
+        <Label fx:id="lastNameLabel" text="Last Name:" style="-fx-font-size: 10px;"/>
+        <Label fx:id="ageLabel" text="Age:" style="-fx-font-size: 10px;"/>
     </VBox>
 
     <VBox alignment="CENTER">
@@ -42,14 +41,14 @@
     </VBox>
 
     <VBox spacing="2">
-        <Label text="Usage Tracking:" style="-fx-font-size: 12px; -fx-font-weight: bold;"/>
-        <Label text="Screen Time:" style="-fx-font-size: 10px;"/>
-        <Label text="Activity Logs:" style="-fx-font-size: 10px;"/>
-        <Label text="Engagement Metrics:" style="-fx-font-size: 10px;"/>
-        <Label text="Sleep Patterns:" style="-fx-font-size: 10px;"/>
-        <Label text="Social Interaction Metrics:" style="-fx-font-size: 10px;"/>
-        <Label text="App Usage Breakdown:" style="-fx-font-size: 10px;"/>
-        <Label text="Focus Sessions:" style="-fx-font-size: 10px;"/>
-    </VBox>
+        <Label fx:id="usageTrackingLabel" text="Usage Tracking:" style="-fx-font-size: 12px; -fx-font-weight: bold;"/>
+        <Label fx:id="screenTimeLabel" text="Screen Time:" style="-fx-font-size: 10px;"/>
+        <Label fx:id="activityLogsLabel" text="Activity Logs:" style="-fx-font-size: 10px;"/>
+        <Label fx:id="engagementMetricsLabel" text="Engagement Metrics:" style="-fx-font-size: 10px;"/>
+        <Label fx:id="sleepPatternsLabel" text="Sleep Patterns:" style="-fx-font-size: 10px;"/>
+        <Label fx:id="socialInteractionMetricsLabel" text="Social Interaction Metrics:" style="-fx-font-size: 10px;"/>
+        <Label fx:id="appUsageBreakdownLabel" text="App Usage Breakdown:" style="-fx-font-size: 10px;"/>
+        <Label fx:id="focusSessionsLabel" text="Focus Sessions:" style="-fx-font-size: 10px;"/>
 
+    </VBox>
 </VBox>
