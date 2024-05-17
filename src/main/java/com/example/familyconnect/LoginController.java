@@ -46,6 +46,25 @@ public class LoginController {
     public Button buttonLogin;
 
     /**
+     *Button for going to start
+     */
+    @FXML
+    public Button backButton;
+
+    /**
+     *Handles the logic for backButton
+     */
+    @FXML
+    protected void onBackButtonClick() throws IOException {
+        Stage stage = (Stage) backButton.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("start.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+        String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
+        scene.getStylesheets().add(stylesheet);
+        stage.setScene(scene);
+    }
+
+    /**
      *Username and password validation for login
      */
     @FXML

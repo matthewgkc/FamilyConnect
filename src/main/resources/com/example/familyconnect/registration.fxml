@@ -13,4 +13,5 @@
     <PasswordField fx:id="confirmPasswordField" promptText="Confirm Password" />
     <Button fx:id="buttonRegistration" text="Register" onAction="#registerButtonClicked" />
     <Label fx:id="statusLabel" style= "-fx-font-size: 10px; -fx-text-fill: #000000; -fx-background-color: #ffffff;"/>
+    <Button fx:id="backButton" text="Back" onAction="#onBackButtonClick" />
 </VBox>

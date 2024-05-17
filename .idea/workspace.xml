@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cbdea7c7-8383-42c6-ab5a-512d6e6fb91f" name="Changes" comment="Made the background for notification labels in login and registration not visible">
+    <list default="true" id="cbdea7c7-8383-42c6-ab5a-512d6e6fb91f" name="Changes" comment="Created the logout feature">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/StartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/StartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/RegistrationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/familyconnect/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/familyconnect/hello-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/familyconnect/start.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/familyconnect/start.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/familyconnect/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/familyconnect/login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/familyconnect/registration.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/familyconnect/registration.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +186,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715923184690</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Created the logout feature">
+      <option name="closed" value="true" />
+      <created>1715925205355</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1715925205355</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -203,6 +213,7 @@
     <MESSAGE value="modified" />
     <MESSAGE value="-Added Basic Overall CSS prototype to entire app&#10;-Also moved individual overview to home page&#10;-Changed individual overview controller to send back to home page instead of user profile page" />
     <MESSAGE value="Made the background for notification labels in login and registration not visible" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made the background for notification labels in login and registration not visible" />
+    <MESSAGE value="Created the logout feature" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created the logout feature" />
   </component>
 </project>

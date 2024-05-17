@@ -12,6 +12,7 @@
         <Button fx:id="buttonLogin" text="Login" onAction="#handleLogin" />
         <Label fx:id="loginMessageLabel" style="-fx-font-size: 10px; -fx-text-fill: #000000; -fx-background-color: #ffffff;"/>
     </children>
+    <Button fx:id="backButton" text="Back" onAction="#onBackButtonClick" />
     <padding>
         <Insets top="20" right="20" bottom="20" left="20"/>
     </padding>

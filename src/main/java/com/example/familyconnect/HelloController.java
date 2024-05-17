@@ -54,6 +54,12 @@ public class HelloController {
     private Button logoutButton;
 
     /**
+     * Personalises user's experience
+     */
+    @FXML
+    private Label welcomeLabel;
+
+    /**
      * Generates create group page
      */
     public Session userSession;
@@ -61,6 +67,11 @@ public class HelloController {
     public void setSession(Session userSession) {
         this.userSession = userSession;
         System.out.println("Now in Home page: " + userSession.getCurrentUserAccount());
+        setWelcomeMessage(userSession.getCurrentUserName());
+    }
+
+    private void setWelcomeMessage(String username) {
+        welcomeLabel.setText("Welcome, " + username + "!");
     }
     /**
      * Generates create group page
@@ -191,6 +202,8 @@ public class HelloController {
         scene.getStylesheets().add(stylesheet);
         stage.setScene(scene);
     }
+
+
 
     public void setContactButton(Button contactButton) {
         this.contactButton = contactButton;

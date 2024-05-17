@@ -52,6 +52,25 @@ public class RegistrationController {
     public Button buttonRegistration;
 
     /**
+     *Button for going to start
+     */
+    @FXML
+    public Button backButton;
+
+    /**
+     *Handles the logic for backButton
+     */
+    @FXML
+    protected void onBackButtonClick() throws IOException {
+        Stage stage = (Stage) backButton.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("start.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+        String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
+        scene.getStylesheets().add(stylesheet);
+        stage.setScene(scene);
+    }
+
+    /**
      *Validates registration from username, password, and password confirmation inputs
      */
     @FXML
