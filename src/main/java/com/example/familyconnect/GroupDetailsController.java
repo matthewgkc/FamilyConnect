@@ -68,6 +68,9 @@ public class GroupDetailsController {
         catch(NullPointerException exception) {
             groupNameLabel.setText("You are not currently in a group");
         }
+        finally{
+            groupNameLabel.setWrapText(true);
+        }
 
     }
     @FXML
