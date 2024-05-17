@@ -153,6 +153,8 @@ public class HelloController {
         Stage stage = (Stage) settingsPageButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("settings-page-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+        String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
+        scene.getStylesheets().add(stylesheet);
         stage.setScene(scene);
     }
 
@@ -161,6 +163,8 @@ public class HelloController {
         Stage stage = (Stage) contactButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("contact-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+        String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
+        scene.getStylesheets().add(stylesheet);
         stage.setScene(scene);
     }
 

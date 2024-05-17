@@ -9,8 +9,7 @@
         <Label text="Login" style="-fx-font-size: 20px;"/>
         <TextField fx:id="usernameField" promptText="Username"/>
         <PasswordField fx:id="passwordField" promptText="Password"/>
-        <Button fx:id="buttonLogin" text="Login" onAction="#handleLogin"/>
-        <Label fx:id="loginMessageLabel"/>
+        <Button fx:id="buttonLogin" text="Login" onAction="#handleLogin" />
     </children>
     <padding>
         <Insets top="20" right="20" bottom="20" left="20"/>

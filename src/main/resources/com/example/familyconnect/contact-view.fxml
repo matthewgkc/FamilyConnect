@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane prefHeight="450.0" prefWidth="300.0" style="-fx-background-color: #B9CDDE; -fx-font-family: Arial;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.familyconnect.ContactController">
+<BorderPane prefHeight="450.0" prefWidth="300.0" style=" -fx-font-family: Arial;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.familyconnect.ContactController">
     <top>
         <VBox alignment="CENTER" spacing="10.0">
             <padding>

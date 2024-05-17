@@ -86,8 +86,14 @@ public class LoginController {
             Session session = new Session(userAccountDAO.getByUsername(username));
             controller.setSession(session);
 
+            Scene scene = new Scene(root, 300, 450);
+
+            String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
+            scene.getStylesheets().add(stylesheet);
+
             Stage stage = (Stage) buttonLogin.getScene().getWindow();
-            stage.setScene(new Scene(root, 300, 450));
+            stage.setScene(scene);
+
         } catch (IOException e) {
             e.printStackTrace();
         }
