@@ -51,17 +51,18 @@ public class GroupDetailsController {
         this.userSession = userSession;
         System.out.println(userSession.getCurrentUserAccount());
 
-        UserGroup userGroup = userGroupDAO.getById(userSession.getCurrentUserAccount().getGroupId());
+        try {
+            UserGroup userGroup = userGroupDAO.getById(userSession.getCurrentUserAccount().getGroupId());
 
-        System.out.println("group to get group name from: " + userGroup.getGroupName());
+            System.out.println("group to get group name from: " + userGroup.getGroupName());
 
-        if((userGroup.getGroupName()) == null) {
-            groupNameLabel.setText("You are not currently in a group");
-        }
-        else {
             groupNameLabel.setText(userGroup.getGroupName());
             familyListView.getItems().addAll(userSession.getGroupUserList());
         }
+        catch(NullPointerException exception) {
+            groupNameLabel.setText("You are not currently in a group");
+        }
+
     }
     @FXML
     protected void backtoHome() throws IOException {
