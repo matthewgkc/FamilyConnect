@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane prefHeight="450.0" prefWidth="300.0" style="-fx-background-color: #B9CDDE; -fx-font-family: Arial;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.familyconnect.SettingsPageController">
+<BorderPane prefHeight="450.0" prefWidth="300.0" style="-fx-background-color: #ffffff; -fx-font-family: Arial;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.familyconnect.SettingsPageController">
 
     <top>
         <VBox alignment="CENTER" spacing="10.0">
@@ -23,24 +23,24 @@
                 <padding>
                     <Insets left="20.0" right="20.0" top="20.0" />
                 </padding>
-                <Button onAction="#editProfileClick" style="-fx-background-radius: 5px; -fx-background-color: #FFF;" text="Edit My Profile">
+                <Button onAction="#editProfileClick" style="-fx-background-radius: 5px; " text="Edit My Profile">
                     <font>
                         <Font size="14.0" />
                     </font>
                 </Button>
-                <Button onAction="#manageFamilyClick" style="-fx-background-radius: 5px; -fx-background-color: #FFF;" text="Manage Family">
+                <Button onAction="#manageFamilyClick" style="-fx-background-radius: 5px;" text="Manage Family">
                     <font>
                         <Font size="14.0" />
                     </font>
                 </Button>
-                <Button onAction="#changePasswordClick" style="-fx-background-radius: 5px; -fx-background-color: #FFF;" text="Change Password">
+                <Button onAction="#changePasswordClick" style="-fx-background-radius: 5px; " text="Change Password">
                     <font>
                         <Font size="14.0" />
                     </font>
                 </Button>
 
                 <HBox alignment="CENTER">
-                    <Button fx:id="backButton" onAction="#backButtonClick" style="-fx-background-radius: 5px; -fx-background-color: #FFF;" text="Back Home">
+                    <Button fx:id="backButton" onAction="#backButtonClick" style="-fx-background-radius: 5px; " text="Back Home">
                         <font>
                             <Font size="14.0" />
                         </font>

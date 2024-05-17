@@ -50,7 +50,13 @@ public class StartController {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fxmlFile));
             Parent root = fxmlLoader.load();
             Stage stage = (Stage) loginButton.getScene().getWindow();
-            stage.setScene(new Scene(root,300, 450));
+
+            Scene scene = new Scene(root, 300, 450);
+
+            String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
+            scene.getStylesheets().add(stylesheet);
+
+            stage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();
         }
