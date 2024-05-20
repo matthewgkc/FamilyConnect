@@ -2,17 +2,30 @@ package com.example.familyconnect;
 
 import com.example.familyconnect.model.UserAccount;
 import com.example.familyconnect.model.UserAccountDAO;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import javafx.scene.chart.PieChart;
+import javafx.fxml.Initializable;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 import java.io.IOException;
 
-public class GroupOverviewController {
+public class GroupOverviewController implements Initializable {
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        loadUsageChartData();
+    }
+
+    @FXML
+    private PieChart usagePieChart;
 
     @FXML
     private ChoiceBox<String> trackingPeriodChoiceBox;
@@ -72,6 +85,15 @@ public class GroupOverviewController {
             appUsageBreakdownLabel.setText("App Usage Breakdown: 4 hours");
             focusSessionsLabel.setText("Focus Sessions: 3 sessions");
         }
+    }
+    private void loadUsageChartData() {
+        ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
+                new PieChart.Data("Work", 25),
+                new PieChart.Data("Entertainment", 35),
+                new PieChart.Data("Social Media", 20),
+                new PieChart.Data("Others", 20)
+        );
+        usagePieChart.setData(pieChartData);
     }
 
 //    private void loadUsageData() {
