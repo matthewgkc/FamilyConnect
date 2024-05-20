@@ -12,21 +12,25 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 
 <?import javafx.scene.text.Text?>
-<VBox alignment="TOP_LEFT" spacing="30.0" xmlns:fx="http://javafx.com/fxml"
+<VBox alignment="TOP_LEFT" spacing="10.0" xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.example.familyconnect.GroupDetailsController">
-    <HBox spacing = "60.0">
-        <HBox alignment="TOP_LEFT" minWidth="60">
-            <Button fx:id="backHomeButton" text="Home" onAction="#backtoHome"/>
-        </HBox>
+    <HBox spacing="10.0" alignment="CENTER_LEFT">
+        <Button fx:id="backHomeButton" text="Home" onAction="#backtoHome"/>
     </HBox>
-    <HBox alignment="CENTER" minWidth="100" minHeight="40">
+    <HBox alignment="CENTER" minHeight="40">
         <Label fx:id="groupNameLabel"/>
     </HBox>
-    <VBox alignment="CENTER">
+    <HBox alignment="CENTER" minHeight="40">
+        <Button fx:id="groupOverviewButton" text="Group Overview" onAction="#sendToGroupOverviewPage"/>
+    </HBox>
+    <VBox alignment="CENTER" spacing="10.0">
         <Label text="Group Members"/>
-        <ListView fx:id="familyListView" maxWidth="250" />
+        <ListView fx:id="familyListView" minHeight="100" maxWidth="250"/>
     </VBox>
-    <VBox alignment="CENTER">
+    <VBox alignment="CENTER" spacing="5.0">
+        <Button fx:id="memberOverviewButton" text="Member's Usage Overview" onAction="#sendToMemberOverviewPage" visible="false"/>
+    </VBox>
+    <VBox alignment="CENTER" spacing="5.0">
         <Button fx:id="addMemberButton" text="Invite New Member" onAction="#sendToAddMembersPage"/>
         <Button fx:id="removeMemberButton" text="Remove Members from group" onAction="#sendToRemoveMembersPage"/>
     </VBox>

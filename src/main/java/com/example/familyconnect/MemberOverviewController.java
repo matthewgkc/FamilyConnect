@@ -12,16 +12,17 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class OverviewController {
+public class MemberOverviewController {
 
     @FXML
     private ChoiceBox<String> trackingPeriodChoiceBox;
 
     @FXML
     private Button backButton;
+    private String memberName;
 
     @FXML
-    private Label userNameLabel;
+    private Label memberNameLabel;
     @FXML
     private Label usageTrackingLabel;
     @FXML
@@ -47,19 +48,19 @@ public class OverviewController {
 
     private Session userSession;
 
-    public void setSession(Session userSession) {
+    public void setSession(Session userSession, String memberName) {
         this.userSession = userSession;
+        this.memberName = memberName;
         loadUserDetails();
     }
-
     @FXML
     protected void backButtonClick() throws IOException {
         UserAccountDAO userAccountDAO = new UserAccountDAO();
         Stage stage = (Stage) backButton.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("group-details-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
 
-        HelloController controller = fxmlLoader.getController();
+        GroupDetailsController controller = fxmlLoader.getController();
         Session session = new Session(userAccountDAO.getByUsername(userSession.getCurrentUserName()));
         controller.setSession(session);
 
@@ -68,10 +69,12 @@ public class OverviewController {
         stage.setScene(scene);
     }
 
+
+
     private void loadUserDetails() {
         UserAccount userAccount = userSession.getCurrentUserAccount();
         if (userAccount != null) {
-            userNameLabel.setText("Full Name: " + userAccount.getUserName());
+            memberNameLabel.setText("Full Name: " + memberName);
             ageLabel.setText("Age: 100");
             screenTimeLabel.setText("Screen Time: 2 hours 30 minutes");
             activityLogsLabel.setText("Activity Logs: 15 logs");
@@ -98,4 +101,5 @@ public class OverviewController {
 //            focusSessionsLabel.setText("Focus Sessions: " + usageData.getFocusSessions());
 //        }
 //    }
+
 }

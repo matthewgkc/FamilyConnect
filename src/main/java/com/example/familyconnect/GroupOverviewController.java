@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class OverviewController {
+public class GroupOverviewController {
 
     @FXML
     private ChoiceBox<String> trackingPeriodChoiceBox;
@@ -20,8 +20,6 @@ public class OverviewController {
     @FXML
     private Button backButton;
 
-    @FXML
-    private Label userNameLabel;
     @FXML
     private Label usageTrackingLabel;
     @FXML
@@ -40,11 +38,6 @@ public class OverviewController {
     private Label focusSessionsLabel;
 
 
-
-
-    @FXML
-    private Label ageLabel;
-
     private Session userSession;
 
     public void setSession(Session userSession) {
@@ -56,10 +49,10 @@ public class OverviewController {
     protected void backButtonClick() throws IOException {
         UserAccountDAO userAccountDAO = new UserAccountDAO();
         Stage stage = (Stage) backButton.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("group-details-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
 
-        HelloController controller = fxmlLoader.getController();
+        GroupDetailsController controller = fxmlLoader.getController();
         Session session = new Session(userAccountDAO.getByUsername(userSession.getCurrentUserName()));
         controller.setSession(session);
 
@@ -71,8 +64,6 @@ public class OverviewController {
     private void loadUserDetails() {
         UserAccount userAccount = userSession.getCurrentUserAccount();
         if (userAccount != null) {
-            userNameLabel.setText("Full Name: " + userAccount.getUserName());
-            ageLabel.setText("Age: 100");
             screenTimeLabel.setText("Screen Time: 2 hours 30 minutes");
             activityLogsLabel.setText("Activity Logs: 15 logs");
             engagementMetricsLabel.setText("Engagement Metrics: 75%");
