@@ -64,13 +64,13 @@ public class EditProfileController {
         try {
             UserAccountDAO userAccountDAO = new UserAccountDAO();
 
-            if (profileName != null) {
+            if (!newName.isEmpty()) {
                 // loginMessageLabel.setText("Login successful.");      ## Was used for testing
                 userSession.getCurrentUserAccount().setUserName(newName);
                 userAccountDAO.update(userSession.getCurrentUserAccount());
                 stopEditingClick();
             } else {
-                errorMessageLabel.setText("Please enter a new name.");
+                errorMessageLabel.setText("Name cannot be null.");
             }
         } catch (Exception e) {
             throw new RuntimeException(e);
