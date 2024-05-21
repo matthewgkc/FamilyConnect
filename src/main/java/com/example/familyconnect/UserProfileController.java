@@ -8,17 +8,26 @@ package com.example.familyconnect;
 import java.io.IOException;
 
 import com.example.familyconnect.model.UserAccountDAO;
+import com.example.familyconnect.model.UserGroup;
+import com.example.familyconnect.model.UserGroupDAO;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 /**
  *Controller for the user profile View
  */
 public class UserProfileController {
+
+    @FXML
+    private Label username;
+
+    @FXML
+    private Label userGroups;
 
     /**
      *Button to send user back to the home-page
@@ -50,6 +59,19 @@ public class UserProfileController {
      * Constructor for user-profile controller
      */
     public UserProfileController() {
+    }
+
+    public void initializeValues() {
+        username.setText("Username:\n" + userSession.getCurrentUserName());
+
+        if (userSession.getCurrentUserGroupId() != 0) {
+            UserGroupDAO userGroupDAO = new UserGroupDAO();
+            String userGroupName = userGroupDAO.getById(userSession.getCurrentUserGroupId()).getGroupName();
+            userGroups.setText("User Group:\n" + userGroupName);
+        }
+        else {
+            userGroups.setText("No Group");
+        }
     }
 
     public void setSession(Session userSession) {
