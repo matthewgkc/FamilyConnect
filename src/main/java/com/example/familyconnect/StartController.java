@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -25,6 +26,12 @@ public class StartController {
      */
     @FXML
     public Button registerButton;
+
+    /**
+     * Label to display logout message
+     */
+    @FXML
+    private Label logoutMessageLabel;
 
     /**
      *Sends user to login page
@@ -51,7 +58,7 @@ public class StartController {
             Parent root = fxmlLoader.load();
             Stage stage = (Stage) loginButton.getScene().getWindow();
 
-            Scene scene = new Scene(root, 300, 450);
+            Scene scene = new Scene(root,HelloApplication.WIDTH, HelloApplication.HEIGHT);
 
             String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
             scene.getStylesheets().add(stylesheet);
@@ -60,5 +67,9 @@ public class StartController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void setLogoutMessage(String message) {
+        logoutMessageLabel.setText(message);
     }
 }

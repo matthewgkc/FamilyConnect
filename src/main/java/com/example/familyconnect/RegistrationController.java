@@ -50,6 +50,25 @@ public class RegistrationController {
      */
     @FXML
     public Button buttonRegistration;
+    /**
+     *Button for attempting to go back to start
+     */
+    @FXML
+    public Button backButton;
+
+    /**
+     * Button for going to previous page
+     * @throws IOException
+     */
+    @FXML
+    protected void onBackButtonClick() throws IOException {
+        Stage stage = (Stage) backButton.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("start.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+        String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
+        scene.getStylesheets().add(stylesheet);
+        stage.setScene(scene);
+    }
 
 
     /**
@@ -94,7 +113,7 @@ public class RegistrationController {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fxmlFile));
             Parent root = fxmlLoader.load();
             Stage stage = (Stage) buttonRegistration.getScene().getWindow();
-            stage.setScene(new Scene(root, 300, 450));
+            stage.setScene(new Scene(root, HelloApplication.WIDTH, HelloApplication.HEIGHT));
         } catch (IOException e) {
             e.printStackTrace();
         }
