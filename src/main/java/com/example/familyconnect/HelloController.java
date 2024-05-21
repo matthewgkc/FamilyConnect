@@ -44,14 +44,26 @@ public class HelloController {
     @FXML
     private Button overviewButton;
 
+    @FXML
+    private Button logoutButton;
+
+    @FXML
+    private Label welcomeLabel;
+
     /**
      * Generates create group page
      */
 
     public Session userSession;
 
+
     public void setSession(Session userSession) {
         this.userSession = userSession;
+        setWelcomeMessage(userSession.getCurrentUserName());
+    }
+
+    private void setWelcomeMessage(String username) {
+        welcomeLabel.setText("Welcome, " + username + "!");
     }
 
     @FXML
@@ -115,6 +127,22 @@ public class HelloController {
         Stage stage = (Stage)this.overviewButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("individual-overview.fxml"));
         Scene scene = new Scene((Parent)fxmlLoader.load(), 300.0, 450.0);
+        String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
+        scene.getStylesheets().add(stylesheet);
+        stage.setScene(scene);
+    }
+
+    @FXML
+    protected void onLogoutButtonClick() throws IOException {
+        userSession = null;
+        Stage stage = (Stage) logoutButton.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("start.fxml"));
+        Parent root = fxmlLoader.load();
+
+        StartController startController = fxmlLoader.getController();
+        startController.setLogoutMessage("You have been logged out.");
+
+        Scene scene = new Scene(root, HelloApplication.WIDTH, HelloApplication.HEIGHT);
         String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
         scene.getStylesheets().add(stylesheet);
         stage.setScene(scene);

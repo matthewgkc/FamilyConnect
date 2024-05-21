@@ -16,10 +16,15 @@
             <Button fx:id="userProfileButton" text="User Profile" onAction="#onUserProfileClick"/>
         </HBox>
 
+    <Label fx:id="welcomeLabel" text="" styleClass="welcomeLabel"/>
+
         <VBox alignment="CENTER" spacing="30.0" styleClass="mainContainer">
             <Button fx:id="createGroupButton" text="Create Group Page" onAction="#onCreateGroupButtonClick"/>
             <Button fx:id="groupDetailsButton" text="Group Details Page" onAction="#onGroupDetailsButtonClick"/>
             <Button fx:id="chatRoomButton" text="Go to Chatroom" onAction="#onChatRoomButtonClick"/>
             <Button fx:id="overviewButton" text="Digital Usage Overview" onAction="#onDigitalUsageOverviewClick"/>
+            <HBox alignment="TOP_RIGHT" styleClass="profileContainer">
+                <Button fx:id="logoutButton" text="Logout" onAction="#onLogoutButtonClick" style="-fx-background-color: #fe8547;"/>
+            </HBox>
         </VBox>
 </VBox>

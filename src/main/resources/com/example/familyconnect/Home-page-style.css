@@ -1,11 +1,11 @@
 .root {
     -fx-font-size: 14px;
     -fx-font-family: arial, sans-serif;
-    -fx-background-color: #F0EBD8;
+    -fx-background-color: #ffffff;
     -fx-font-color: #3E5C76;
 }
 .mainContainer {
-    -fx-background-color: #3E5C76;
+    -fx-background-color: #ffffff;
     -fx-hgap: 20px;
     -fx-padding: 40px;
 
@@ -17,13 +17,29 @@
     -fx-border-color: #0D1321;
 }
 .label {
-    -fx-background-color: #3E5C76;
-    -fx-background-color: #F0EBD8;
-    -fx-background-radius: 20px;
-    -fx-border-radius: 20px;
+    -fx-background-color: #fe8547;
+    -fx-text-fill: #ffffff;
+    -fx-background-radius: 2px;
+    -fx-border-radius: 1px;
     -fx-border-width: 3px;
-    -fx-border-color: #F0EBD8;
+    -fx-padding: 5px 10px;
 }
 .choice {
     -fx-color: #3E5C76;
+    -fx-background-color: #47a3fe;
 }
+
+.button {
+    -fx-background-color: #47a3fe;
+    -fx-text-fill: white;
+    -fx-border-radius: 5px;
+    -fx-padding: 10px 20px;
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+}
+
+.button:hover {
+    -fx-color: #3590e0;
+}
+
+
