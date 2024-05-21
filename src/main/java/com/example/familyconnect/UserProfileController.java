@@ -109,6 +109,10 @@ public class UserProfileController {
         Stage stage = (Stage)this.individualOverviewButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("individual-overview.fxml"));
         Scene scene = new Scene((Parent)fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+        UserAccountDAO userAccountDAO = new UserAccountDAO();
+        com.example.familyconnect.OverviewController controller = fxmlLoader.getController();
+        Session session = new Session(userAccountDAO.getByUsername(userSession.getCurrentUserName()));
+        controller.setSession(session);
         String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
         scene.getStylesheets().add(stylesheet);
         stage.setScene(scene);
