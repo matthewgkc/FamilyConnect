@@ -22,10 +22,14 @@
     <VBox alignment="CENTER" styleClass="mainContainer" spacing="10.0">
         <Label text="Profile Name" styleClass="label"/>
         <TextField fx:id="profileName" maxWidth="200.0" promptText="Profile Name"/>
+        <Label fx:id="errorMessageLabel" style="-fx-font-size: 10px; -fx-text-fill: #000000; -fx-background-color: #ffffff;"/>
 
         <Label text="Email"/>
         <TextField maxWidth="200.0" promptText="sample@email.com"/>
     </VBox>
 
+    <HBox alignment="TOP_LEFT" styleClass="profileContainer">
+        <Button fx:id="saveChangesButton" text="Save" onAction="#saveNewDetails"/>
+    </HBox>
 
 </VBox>
