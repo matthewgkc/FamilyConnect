@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cbdea7c7-8383-42c6-ab5a-512d6e6fb91f" name="Changes" comment="Functioning save button for editing profile">
+    <list default="true" id="cbdea7c7-8383-42c6-ab5a-512d6e6fb91f" name="Changes" comment="Created error message if save button is clicked when new name text field is null">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/database.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/EditProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/EditProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/UserProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/UserProfileController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/familyconnect/edit-profile-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/familyconnect/edit-profile-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +73,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "user/edit-profile-persistence",
     "kotlin-language-version-configured": "true",
     "last_directory_selection": "C:/Users/maris/IdeaProjects/FamilyConnect-main/src/main/java/com/example/familyconnect",
     "last_opened_file_path": "C:/Users/donov/.m2/repository/org/xerial/sqlite-jdbc/3.36.0.3",
@@ -184,7 +185,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716278167634</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Created error message if save button is clicked when new name text field is null">
+      <option name="closed" value="true" />
+      <created>1716279701843</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1716279701843</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -204,6 +213,7 @@
     <MESSAGE value="-Added Basic Overall CSS prototype to entire app&#10;-Also moved individual overview to home page&#10;-Changed individual overview controller to send back to home page instead of user profile page" />
     <MESSAGE value="Readded session carrying" />
     <MESSAGE value="Functioning save button for editing profile" />
-    <option name="LAST_COMMIT_MESSAGE" value="Functioning save button for editing profile" />
+    <MESSAGE value="Created error message if save button is clicked when new name text field is null" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created error message if save button is clicked when new name text field is null" />
   </component>
 </project>
