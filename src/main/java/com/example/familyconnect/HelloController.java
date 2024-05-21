@@ -2,6 +2,7 @@ package com.example.familyconnect;
 
 import com.example.familyconnect.model.UserAccount;
 import com.example.familyconnect.model.UserAccountDAO;
+import com.example.familyconnect.model.UserGroupDAO;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -51,6 +52,9 @@ public class HelloController {
     @FXML
     private Label welcomeLabel;
 
+    @FXML
+    private Label welcomeGroup;
+
     /**
      * Generates create group page
      */
@@ -60,11 +64,23 @@ public class HelloController {
 
     public void setSession(Session userSession) {
         this.userSession = userSession;
+
+        System.out.println(userSession.getCurrentUserAccount());
         setWelcomeMessage(userSession.getCurrentUserName());
+
+        if (userSession.getCurrentUserGroupId() != 0) {
+            setWelcomeGroup();
+        }
     }
 
     private void setWelcomeMessage(String username) {
         welcomeLabel.setText("Welcome, " + username + "!");
+    }
+
+    private void setWelcomeGroup() {
+        UserGroupDAO userGroupDAO = new UserGroupDAO();
+        String groupName = userGroupDAO.getById(userSession.getCurrentUserGroupId()).getGroupName();
+        welcomeGroup.setText("Your Group: " + groupName);
     }
 
     @FXML

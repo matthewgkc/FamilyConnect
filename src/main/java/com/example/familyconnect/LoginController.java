@@ -102,7 +102,10 @@ public class LoginController {
 
             com.example.familyconnect.HelloController controller = fxmlLoader.getController();
 
-            Session session = new Session(new UserAccount(username, password));
+            UserAccountDAO userAccountDAO = new UserAccountDAO();
+            UserAccount loginUser = userAccountDAO.getByUsername(username);
+
+            Session session = new Session(loginUser);
             controller.setSession(session);
 
             Scene scene = new Scene(root, HelloApplication.WIDTH, HelloApplication.HEIGHT);

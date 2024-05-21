@@ -16,7 +16,10 @@
             <Button fx:id="userProfileButton" text="User Profile" onAction="#onUserProfileClick"/>
         </HBox>
 
-    <Label fx:id="welcomeLabel" text="" styleClass="welcomeLabel" style="-fx-background-color: #ffffff; -fx-text-fill: #000000;"/>
+    <VBox alignment="TOP_LEFT">
+        <Label fx:id="welcomeLabel" text="" styleClass="welcomeLabel" style="-fx-background-color: #ffffff; -fx-text-fill: #000000;"/>
+        <Label fx:id="welcomeGroup" text="" style="-fx-background-color: #ffffff; -fx-text-fill: #000000;"/>
+    </VBox>
 
         <VBox alignment="CENTER" spacing="30.0" styleClass="mainContainer">
             <Button fx:id="createGroupButton" text="Create Group Page" onAction="#onCreateGroupButtonClick"/>
