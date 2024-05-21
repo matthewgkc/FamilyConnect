@@ -2,6 +2,7 @@ package com.example.familyconnect;
 
 import com.example.familyconnect.model.UserAccount;
 import com.example.familyconnect.model.UserAccountDAO;
+import com.example.familyconnect.model.UserGroupDAO;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -28,6 +29,9 @@ public class EditProfileController {
     @FXML
     private Label errorMessageLabel;
 
+    @FXML
+    private Button leaveGroupButton;
+
     public Session userSession;
 
     public void setSession(Session userSession) {
@@ -37,6 +41,19 @@ public class EditProfileController {
     /**
      * Generates user profile page
      */
+
+    public void initializeValues() {
+        profileName.setText(userSession.getCurrentUserName());
+        UserGroupDAO userGroupDAO = new UserGroupDAO();
+
+        if (userSession.getCurrentUserGroupId() != 0) {
+            String admin = userGroupDAO.getById(userSession.getCurrentUserGroupId()).getGroupAdmin();
+            if (!admin.equals(userSession.getCurrentUserName())) {
+                //If you're in a group and not the admin, you can leave the group
+                leaveGroupButton.setVisible(true);
+            }
+        }
+    }
 
     /**
      *Sends user back to the user-profile page
@@ -65,13 +82,23 @@ public class EditProfileController {
             UserAccountDAO userAccountDAO = new UserAccountDAO();
 
             if (!newName.isEmpty()) {
-                // loginMessageLabel.setText("Login successful.");      ## Was used for testing
                 userSession.getCurrentUserAccount().setUserName(newName);
                 userAccountDAO.update(userSession.getCurrentUserAccount());
                 stopEditingClick();
             } else {
                 errorMessageLabel.setText("Name cannot be null.");
             }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @FXML
+    protected void leaveCurrentGroup() {
+        try {
+            UserAccountDAO userAccountDAO = new UserAccountDAO();
+            userSession.getCurrentUserAccount().setGroupId(0); //Set to "no group (0)"
+            userAccountDAO.update(userSession.getCurrentUserAccount());
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

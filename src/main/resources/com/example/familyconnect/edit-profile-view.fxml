@@ -24,8 +24,7 @@
         <TextField fx:id="profileName" maxWidth="200.0" promptText="Change Name"/>
         <Label fx:id="errorMessageLabel" style="-fx-font-size: 10px; -fx-background-color: #1D2D44;"/>
 
-        <Label text="Email"/>
-        <TextField maxWidth="200.0" promptText="sample@email.com"/>
+        <Button fx:id="leaveGroupButton" visible="false" text="Leave Group" onAction="#leaveCurrentGroup" style="-fx-background-color: #ff0000"/>
     </VBox>
 
     <HBox alignment="TOP_LEFT" styleClass="profileContainer">
