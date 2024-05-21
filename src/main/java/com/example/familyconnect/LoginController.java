@@ -44,6 +44,27 @@ public class LoginController {
      */
     @FXML
     public Button buttonLogin;
+    /**
+     *Button for attempting to go back to start
+     */
+    @FXML
+    public Button backButton;
+
+    /**
+     * Button for going to previous page
+     * @throws IOException
+     */
+    @FXML
+    protected void onBackButtonClick() throws IOException {
+        Stage stage = (Stage) backButton.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("start.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+        String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
+        scene.getStylesheets().add(stylesheet);
+        stage.setScene(scene);
+    }
+
+
 
     /**
      *Username and password validation for login
@@ -80,10 +101,19 @@ public class LoginController {
             Parent root = fxmlLoader.load();
 
             com.example.familyconnect.HelloController controller = fxmlLoader.getController();
-            controller.setSession(new Session(new UserAccount(username, password)));
+
+            Session session = new Session(new UserAccount(username, password));
+            controller.setSession(session);
+
+            Scene scene = new Scene(root, HelloApplication.WIDTH, HelloApplication.HEIGHT);
+
+            String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
+            scene.getStylesheets().add(stylesheet);
 
             Stage stage = (Stage) buttonLogin.getScene().getWindow();
-            stage.setScene(new Scene(root, 300, 450));
+            stage.setScene(scene);
+
+
         } catch (IOException e) {
             e.printStackTrace();
         }

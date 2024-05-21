@@ -55,7 +55,7 @@ public class UserProfileController {
     protected void backtoHome() throws IOException {
         Stage stage = (Stage)this.backHomeButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene((Parent)fxmlLoader.load(), 300.0, 450.0);
+        Scene scene = new Scene((Parent)fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
         String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
         scene.getStylesheets().add(stylesheet);
         stage.setScene(scene);
@@ -68,7 +68,7 @@ public class UserProfileController {
     protected void onIndividualOverviewClick() throws IOException {
         Stage stage = (Stage)this.individualOverviewButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("individual-overview.fxml"));
-        Scene scene = new Scene((Parent)fxmlLoader.load(), 300.0, 450.0);
+        Scene scene = new Scene((Parent)fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
         String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
         scene.getStylesheets().add(stylesheet);
         stage.setScene(scene);
@@ -96,7 +96,7 @@ public class UserProfileController {
     protected void onEditProfileClick() throws IOException {
         Stage stage = (Stage)this.editProfileButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("edit-profile-view.fxml"));
-        Scene scene = new Scene((Parent)fxmlLoader.load(), 300.0, 450.0);
+        Scene scene = new Scene((Parent)fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
         String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
         scene.getStylesheets().add(stylesheet);
         stage.setScene(scene);

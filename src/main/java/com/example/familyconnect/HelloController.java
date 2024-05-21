@@ -126,7 +126,7 @@ public class HelloController {
     protected void onDigitalUsageOverviewClick() throws IOException {
         Stage stage = (Stage)this.overviewButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("individual-overview.fxml"));
-        Scene scene = new Scene((Parent)fxmlLoader.load(), 300.0, 450.0);
+        Scene scene = new Scene((Parent)fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
         String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
         scene.getStylesheets().add(stylesheet);
         stage.setScene(scene);
