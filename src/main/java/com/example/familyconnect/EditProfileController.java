@@ -2,6 +2,7 @@ package com.example.familyconnect;
 
 import com.example.familyconnect.model.UserAccount;
 import com.example.familyconnect.model.UserAccountDAO;
+import com.example.familyconnect.model.UserGroup;
 import com.example.familyconnect.model.UserGroupDAO;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -68,6 +69,7 @@ public class EditProfileController {
         com.example.familyconnect.UserProfileController controller = fxmlLoader.getController();
         Session session = new Session(userAccountDAO.getByUsername(userSession.getCurrentUserName()));
         controller.setSession(session);
+        controller.initializeValues();
 
         String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
         scene.getStylesheets().add(stylesheet);
@@ -82,8 +84,21 @@ public class EditProfileController {
             UserAccountDAO userAccountDAO = new UserAccountDAO();
 
             if (!newName.isEmpty()) {
+                String oldName = userSession.getCurrentUserName();
+
                 userSession.getCurrentUserAccount().setUserName(newName);
                 userAccountDAO.update(userSession.getCurrentUserAccount());
+
+                if (userSession.getCurrentUserGroupId() != 0) {
+                    UserGroupDAO userGroupDAO = new UserGroupDAO();
+                    UserGroup userGroup = userGroupDAO.getById(userSession.getCurrentUserGroupId());
+                    if (userGroup.getGroupAdmin().equals(oldName)) {
+                        //If you are the admin, change the admin details in the group as well
+                        userGroup.setGroupAdmin(newName);
+                        userGroupDAO.update(userGroup);
+                    }
+                }
+
                 stopEditingClick();
             } else {
                 errorMessageLabel.setText("Name cannot be null.");
@@ -99,6 +114,7 @@ public class EditProfileController {
             UserAccountDAO userAccountDAO = new UserAccountDAO();
             userSession.getCurrentUserAccount().setGroupId(0); //Set to "no group (0)"
             userAccountDAO.update(userSession.getCurrentUserAccount());
+            stopEditingClick();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
