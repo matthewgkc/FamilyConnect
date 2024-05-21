@@ -21,6 +21,7 @@
 
         <Label fx:id="profilePicture" text="(Profile Image)" styleClass="label"/>
         <Label fx:id="username" text="Profile Name" styleClass="label"/>
+        <Label fx:id="password" text="Profile Password" styleClass="label"/>
         <Label fx:id="userGroups" text="User's Group:" styleClass="label"/>
 
     </VBox>

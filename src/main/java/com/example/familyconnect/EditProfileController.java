@@ -31,6 +31,13 @@ public class EditProfileController {
     private Label errorMessageLabel;
 
     @FXML
+    private TextField profilePassword;
+
+    @FXML
+    private Label passwordErrorMessageLabel;
+
+
+    @FXML
     private Button leaveGroupButton;
 
     public Session userSession;
@@ -45,6 +52,7 @@ public class EditProfileController {
 
     public void initializeValues() {
         profileName.setText(userSession.getCurrentUserName());
+        profilePassword.setText(userSession.getCurrentUserPassword());
         UserGroupDAO userGroupDAO = new UserGroupDAO();
 
         if (userSession.getCurrentUserGroupId() != 0) {
@@ -79,6 +87,7 @@ public class EditProfileController {
     @FXML
     protected void saveNewDetails() {
         String newName = profileName.getText();
+        String newPassword = profilePassword.getText();
 
         try {
             UserAccountDAO userAccountDAO = new UserAccountDAO();
@@ -87,6 +96,7 @@ public class EditProfileController {
                 String oldName = userSession.getCurrentUserName();
 
                 userSession.getCurrentUserAccount().setUserName(newName);
+                userSession.getCurrentUserAccount().setPassword(newPassword);
                 userAccountDAO.update(userSession.getCurrentUserAccount());
 
                 if (userSession.getCurrentUserGroupId() != 0) {

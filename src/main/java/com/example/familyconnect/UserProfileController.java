@@ -27,6 +27,9 @@ public class UserProfileController {
     private Label username;
 
     @FXML
+    private Label password;
+
+    @FXML
     private Label userGroups;
 
     /**
@@ -63,6 +66,7 @@ public class UserProfileController {
 
     public void initializeValues() {
         username.setText("Username:\n" + userSession.getCurrentUserName());
+        password.setText("Password:\n" + userSession.getCurrentUserPassword());
 
         if (userSession.getCurrentUserGroupId() != 0) {
             UserGroupDAO userGroupDAO = new UserGroupDAO();
