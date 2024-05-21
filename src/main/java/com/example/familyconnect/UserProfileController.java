@@ -116,6 +116,7 @@ public class UserProfileController {
         com.example.familyconnect.EditProfileController controller = fxmlLoader.getController();
         Session session = new Session(userAccountDAO.getByUsername(userSession.getCurrentUserName()));
         controller.setSession(session);
+        controller.initializeValues();
 
         String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
         scene.getStylesheets().add(stylesheet);
