@@ -26,6 +26,13 @@ public class UserAccount {
         this.groupId = groupId;
     }
 
+    public UserAccount(String userName, String password) {
+        // Since the id is auto-incremented, it is nice to have a constructor without it
+        this.userName = userName;
+        this.password = password;
+        this.groupId = 0;
+    }
+
     public int getId() {
         return id;
     }

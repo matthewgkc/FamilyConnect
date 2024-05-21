@@ -42,10 +42,16 @@ public class UserProfileController {
     @FXML
     private Button individualOverviewButton;
 
+    public Session userSession;
+
     /**
      * Constructor for user-profile controller
      */
     public UserProfileController() {
+    }
+
+    public void setSession(Session userSession) {
+        this.userSession = userSession;
     }
 
     /**

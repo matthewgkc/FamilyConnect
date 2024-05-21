@@ -1,6 +1,7 @@
 package com.example.familyconnect;
 
 import com.example.familyconnect.model.UserAccount;
+import com.example.familyconnect.model.UserAccountDAO;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -68,12 +69,14 @@ public class HelloController {
 
     @FXML
     protected void onCreateGroupButtonClick() throws IOException {
+        UserAccountDAO userAccountDAO = new UserAccountDAO();
+
         Stage stage = (Stage) createGroupButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("create-group.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
 
         com.example.familyconnect.CreateGroupController controller = fxmlLoader.getController();
-        controller.setSession(new Session(new UserAccount(userSession.getCurrentUserName(), userSession.getCurrentUserPassword())));
+        controller.setSession(new Session(userAccountDAO.getByUsername(userSession.getCurrentUserName())));
 
         String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
         scene.getStylesheets().add(stylesheet);
@@ -85,9 +88,15 @@ public class HelloController {
      */
     @FXML
     protected void onGroupDetailsButtonClick() throws IOException {
+        UserAccountDAO userAccountDAO = new UserAccountDAO();
+
         Stage stage = (Stage) groupDetailsButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("group-details-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+
+        com.example.familyconnect.GroupDetailsController controller = fxmlLoader.getController();
+        controller.setSession(new Session(userAccountDAO.getByUsername(userSession.getCurrentUserName())));
+
         String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
         scene.getStylesheets().add(stylesheet);
         stage.setScene(scene);
@@ -98,9 +107,15 @@ public class HelloController {
      */
     @FXML
     protected void onUserProfileClick() throws IOException {
+        UserAccountDAO userAccountDAO = new UserAccountDAO();
+
         Stage stage = (Stage) userProfileButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("user-profile-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+
+        com.example.familyconnect.UserProfileController controller = fxmlLoader.getController();
+        controller.setSession(new Session(userAccountDAO.getByUsername(userSession.getCurrentUserName())));
+
         String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
         scene.getStylesheets().add(stylesheet);
         stage.setScene(scene);
