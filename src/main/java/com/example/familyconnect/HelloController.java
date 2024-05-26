@@ -143,9 +143,14 @@ public class HelloController {
      */
     @FXML
     protected void onChatRoomButtonClick() throws IOException {
+        UserAccountDAO userAccountDAO = new UserAccountDAO();
         Stage stage = (Stage) chatRoomButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("chat-room-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+
+        com.example.familyconnect.ChatController controller = fxmlLoader.getController();
+        controller.setSession(new Session(userAccountDAO.getByUsername(userSession.getCurrentUserName())));
+
         String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
         scene.getStylesheets().add(stylesheet);
         stage.setScene(scene);
@@ -156,10 +161,15 @@ public class HelloController {
      */
     @FXML
     protected void onDigitalUsageOverviewClick() throws IOException {
+        UserAccountDAO userAccountDAO = new UserAccountDAO();
         Stage stage = (Stage)this.overviewButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("individual-overview.fxml"));
         Scene scene = new Scene((Parent)fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
         String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
+
+        com.example.familyconnect.OverviewController controller = fxmlLoader.getController();
+        controller.setSession(new Session(userAccountDAO.getByUsername(userSession.getCurrentUserName())));
+
         scene.getStylesheets().add(stylesheet);
         stage.setScene(scene);
     }

@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cbdea7c7-8383-42c6-ab5a-512d6e6fb91f" name="Changes" comment="Display group name in welcome message if the user is in a group">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/EditProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/EditProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/UserProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/UserProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/familyconnect/edit-profile-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/familyconnect/edit-profile-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/familyconnect/user-profile-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/familyconnect/user-profile-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/HelloController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +28,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="logout&amp;design" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -73,7 +70,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "user/edit-profile-persistence",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_directory_selection": "C:/Users/maris/IdeaProjects/FamilyConnect-main/src/main/java/com/example/familyconnect",
     "last_opened_file_path": "C:/Users/donov/.m2/repository/org/xerial/sqlite-jdbc/3.36.0.3",
