@@ -21,11 +21,12 @@
         <Label fx:id="welcomeGroup" text="" style="-fx-background-color: #ffffff; -fx-text-fill: #000000;"/>
     </VBox>
 
-        <VBox alignment="CENTER" spacing="30.0" styleClass="mainContainer">
+        <VBox alignment="CENTER" spacing="20.0" styleClass="mainContainer">
             <Button fx:id="createGroupButton" text="Create Group Page" onAction="#onCreateGroupButtonClick"/>
             <Button fx:id="groupDetailsButton" text="Group Details Page" onAction="#onGroupDetailsButtonClick"/>
             <Button fx:id="chatRoomButton" text="Go to Chatroom" onAction="#onChatRoomButtonClick"/>
             <Button fx:id="overviewButton" text="Digital Usage Overview" onAction="#onDigitalUsageOverviewClick"/>
+            <Button fx:id="settingsButton" text="Settings" onAction="#onSettingsButtonClick"/>
             <HBox alignment="TOP_RIGHT" styleClass="profileContainer">
                 <Button fx:id="logoutButton" text="Logout" onAction="#onLogoutButtonClick" style="-fx-background-color: #fe8547;"/>
             </HBox>

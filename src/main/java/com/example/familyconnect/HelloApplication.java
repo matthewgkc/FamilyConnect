@@ -22,7 +22,7 @@ public class HelloApplication extends Application {
     /**
      * Width of JavaFX window
      */
-    public static final int WIDTH = 300;
+    public static final int WIDTH = 400;
 
     /**
      * Height of JavaFX window

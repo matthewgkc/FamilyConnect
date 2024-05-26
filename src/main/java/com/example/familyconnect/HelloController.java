@@ -47,6 +47,9 @@ public class HelloController {
     private Button overviewButton;
 
     @FXML
+    private Button settingsButton;
+
+    @FXML
     private Button logoutButton;
 
     @FXML
@@ -170,6 +173,24 @@ public class HelloController {
         com.example.familyconnect.OverviewController controller = fxmlLoader.getController();
         controller.setSession(new Session(userAccountDAO.getByUsername(userSession.getCurrentUserName())));
 
+        scene.getStylesheets().add(stylesheet);
+        stage.setScene(scene);
+    }
+
+    /**
+     * Sends user to the settings page
+     */
+    @FXML
+    protected void onSettingsButtonClick() throws IOException {
+        UserAccountDAO userAccountDAO = new UserAccountDAO();
+        Stage stage = (Stage) settingsButton.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("settings-page-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+
+        com.example.familyconnect.SettingsPageController controller = fxmlLoader.getController();
+        controller.setSession(new Session(userAccountDAO.getByUsername(userSession.getCurrentUserName())));
+
+        String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
         scene.getStylesheets().add(stylesheet);
         stage.setScene(scene);
     }

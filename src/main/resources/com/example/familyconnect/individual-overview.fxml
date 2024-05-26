@@ -8,13 +8,13 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.collections.FXCollections?>
 <?import java.lang.String?>
-<VBox alignment="CENTER" spacing="5" xmlns:fx="http://javafx.com/fxml"
+<VBox alignment="TOP_CENTER" spacing="5" xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.example.familyconnect.OverviewController">
-    <HBox alignment="CENTER">
+    <HBox alignment="TOP_LEFT" style="padding-bottom: 25px;">
         <Button fx:id="backButton" text="Back" onAction="#backButtonClick"/>
     </HBox>
     <padding>
-        <Insets top="10" right="10" bottom="50" left="10"/>
+        <Insets top="10" right="10" bottom="100" left="10"/>
     </padding>
 
     <Label text="Individual Overview" style="-fx-font-size: 20px; -fx-font-weight: bold;" styleClass="overview-label"/>
