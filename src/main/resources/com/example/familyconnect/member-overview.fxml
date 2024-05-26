@@ -8,9 +8,9 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.collections.FXCollections?>
 <?import java.lang.String?>
-<VBox alignment="CENTER" spacing="5" xmlns:fx="http://javafx.com/fxml"
+<VBox alignment="TOP_CENTER" spacing="5" xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.example.familyconnect.MemberOverviewController">
-    <HBox alignment="CENTER">
+    <HBox alignment="TOP_LEFT">
         <Button fx:id="backButton" text="Back" onAction="#backButtonClick"/>
     </HBox>
     <padding>
