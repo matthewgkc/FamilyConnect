@@ -96,7 +96,12 @@ public class RegistrationController {
                 else{
                     userAccountDAO.insert(new UserAccount(username, password, 0));
                     // statusLabel.setText("Registration successful!");         ## Was used for testing
-                    loadPage("start.fxml");
+                    Stage stage = (Stage) backButton.getScene().getWindow();
+                    FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("start.fxml"));
+                    Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+                    String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
+                    scene.getStylesheets().add(stylesheet);
+                    stage.setScene(scene);
                 }
 
             } catch (Exception e) {
