@@ -107,8 +107,11 @@ public class CreateGroupController {
             controller.setGroup(groupName);
             controller.setSession(userSession);
             Stage stage = (Stage) groupNameField.getScene().getWindow();
-            Scene scene = new Scene(root, 300, 450);
+            Scene scene = new Scene(root, HelloApplication.WIDTH, HelloApplication.HEIGHT);
             stage.setTitle("Family Connect");
+
+            String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
+            scene.getStylesheets().add(stylesheet);
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
