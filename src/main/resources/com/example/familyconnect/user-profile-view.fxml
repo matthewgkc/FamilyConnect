@@ -30,7 +30,7 @@
         <Button text="Profile Options" onAction="#expandProfileOptions"/>
     </HBox>
 
-    <HBox styleClass="footer">
+    <HBox styleClass="footer" spacing="5.0">
         <Button fx:id="editProfileButton" text="Edit Profile" visible="false" onAction="#onEditProfileClick"/>
         <Button fx:id="deleteProfileButton" text="Delete Profile" visible="false"/>
     </HBox>

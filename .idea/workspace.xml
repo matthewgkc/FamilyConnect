@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cbdea7c7-8383-42c6-ab5a-512d6e6fb91f" name="Changes" comment="Readded settings button, adjusted scene view, and aligned overview to top-center">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/familyconnect/group-overview.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/familyconnect/group-overview.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/familyconnect/member-overview.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/familyconnect/member-overview.fxml" afterDir="false" />
+    <list default="true" id="cbdea7c7-8383-42c6-ab5a-512d6e6fb91f" name="Changes" comment="added stylesheets to settings page methods">
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/familyconnect/user-profile-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/familyconnect/user-profile-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -230,7 +228,23 @@
       <option name="project" value="LOCAL" />
       <updated>1716721573922</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="changed group &amp; member overviews alignments">
+      <option name="closed" value="true" />
+      <created>1716722133187</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1716722133187</updated>
+    </task>
+    <task id="LOCAL-00012" summary="added stylesheets to settings page methods">
+      <option name="closed" value="true" />
+      <created>1716722233634</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1716722233634</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -255,6 +269,8 @@
     <MESSAGE value="Made user profile data dynamic (and removed irrelevent fields)" />
     <MESSAGE value="Fixed chatroom and overview session functionality" />
     <MESSAGE value="Readded settings button, adjusted scene view, and aligned overview to top-center" />
-    <option name="LAST_COMMIT_MESSAGE" value="Readded settings button, adjusted scene view, and aligned overview to top-center" />
+    <MESSAGE value="changed group &amp; member overviews alignments" />
+    <MESSAGE value="added stylesheets to settings page methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="added stylesheets to settings page methods" />
   </component>
 </project>
