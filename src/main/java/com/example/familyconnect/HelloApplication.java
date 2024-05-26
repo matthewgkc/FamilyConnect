@@ -38,7 +38,7 @@ public class HelloApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load(), WIDTH, HEIGHT);
         String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
         scene.getStylesheets().add(stylesheet);
-        stage.setTitle("Home page");
+        stage.setTitle("Family Connect");
         stage.setScene(scene);
         stage.show();
     }
