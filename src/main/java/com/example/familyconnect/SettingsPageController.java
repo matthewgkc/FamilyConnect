@@ -34,6 +34,8 @@ public class SettingsPageController {
         Session session = new Session(userAccountDAO.getByUsername(userSession.getCurrentUserName()));
         controller.setSession(session);
 
+        String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
+        scene.getStylesheets().add(stylesheet);
         stage.setScene(scene);
     }
 
@@ -53,6 +55,8 @@ public class SettingsPageController {
         Session session = new Session(userAccountDAO.getByUsername(userSession.getCurrentUserName()));
         controller.setSession(session);
 
+        String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
+        scene.getStylesheets().add(stylesheet);
         stage.setScene(scene);
     }
 
