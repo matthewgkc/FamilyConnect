@@ -7,6 +7,7 @@
 
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.collections.FXCollections?>
+<?import javafx.scene.chart.PieChart?>
 <?import java.lang.String?>
 <VBox alignment="TOP_CENTER" spacing="5" xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.example.familyconnect.MemberOverviewController">
@@ -50,4 +51,7 @@
         <Label fx:id="focusSessionsLabel" text="Focus Sessions:" style="-fx-font-size: 10px;"/>
 
     </VBox>
+    <HBox alignment="CENTER" style="-fx-padding: 0;">
+        <PieChart fx:id="usagePieChart" prefWidth="250.0" prefHeight="40.0" />
+    </HBox>
 </VBox>
