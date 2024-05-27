@@ -68,7 +68,6 @@ public class HelloController {
     public void setSession(Session userSession) {
         this.userSession = userSession;
 
-        System.out.println(userSession.getCurrentUserAccount());
         setWelcomeMessage(userSession.getCurrentUserName());
 
         if (userSession.getCurrentUserGroupId() != 0) {

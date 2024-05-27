@@ -39,7 +39,6 @@ public class CreateGroupController {
 
     public void setSession(Session userSession) {
         this.userSession = userSession;
-        System.out.println("final Login: " + userSession.getCurrentUserAccount());
     }
 
     /**
@@ -50,7 +49,7 @@ public class CreateGroupController {
         UserAccountDAO userAccountDAO = new UserAccountDAO();
         Stage stage = (Stage)this.backHomeButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene((Parent)fxmlLoader.load(), 300.0, 450.0);
+        Scene scene = new Scene((Parent)fxmlLoader.load(), 400.0, 600.0);
 
         com.example.familyconnect.HelloController controller = fxmlLoader.getController();
         Session session = new Session(userAccountDAO.getByUsername(userSession.getCurrentUserName()));

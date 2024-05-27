@@ -58,12 +58,9 @@ public class GroupDetailsController {
         UserGroupDAO userGroupDAO = new UserGroupDAO();
 
         this.userSession = userSession;
-        System.out.println(userSession.getCurrentUserAccount());
 
         try {
             UserGroup userGroup = userGroupDAO.getById(userSession.getCurrentUserAccount().getGroupId());
-
-            System.out.println("group to get group name from: " + userGroup.getGroupName());
 
             groupNameLabel.setText(userGroup.getGroupName());
             familyListView.getItems().addAll(userSession.getGroupUserList());
