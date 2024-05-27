@@ -47,6 +47,6 @@
 
     </VBox>
     <HBox alignment="CENTER" style="-fx-padding: 0;">
-        <PieChart fx:id="usagePieChart" prefWidth="250.0" prefHeight="20.0" />
+        <PieChart fx:id="usagePieChart" prefWidth="250.0" prefHeight="50.0" />
     </HBox>
 </VBox>

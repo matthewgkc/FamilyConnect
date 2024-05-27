@@ -2,6 +2,8 @@ package com.example.familyconnect;
 
 import com.example.familyconnect.model.UserAccount;
 import com.example.familyconnect.model.UserAccountDAO;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -9,10 +11,19 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
-
+import javafx.fxml.Initializable;
+import javafx.scene.chart.PieChart;
+import java.net.URL;
+import java.util.ResourceBundle;
 import java.io.IOException;
 
-public class OverviewController {
+public class OverviewController implements Initializable{
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        loadUsageChartData();
+    }
+
+    @FXML
+    private PieChart usagePieChart;
 
     @FXML
     private ChoiceBox<String> trackingPeriodChoiceBox;
@@ -66,6 +77,15 @@ public class OverviewController {
         String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
         scene.getStylesheets().add(stylesheet);
         stage.setScene(scene);
+    }
+    private void loadUsageChartData() {
+        ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
+                new PieChart.Data("Work", 40),
+                new PieChart.Data("Entertainment", 30),
+                new PieChart.Data("Social Media", 15),
+                new PieChart.Data("Others", 15)
+        );
+        usagePieChart.setData(pieChartData);
     }
 
     private void loadUserDetails() {

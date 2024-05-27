@@ -13,7 +13,6 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import javafx.scene.chart.PieChart;
-import javafx.fxml.Initializable;
 import java.net.URL;
 import java.util.ResourceBundle;
 
