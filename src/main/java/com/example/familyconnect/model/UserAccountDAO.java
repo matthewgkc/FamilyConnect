@@ -53,7 +53,6 @@ public class UserAccountDAO {
             updateAccount.setString(2, userAccount.getPassword());
             updateAccount.setInt(3, userAccount.getGroupId());
             updateAccount.setInt(4, userAccount.getId());
-            System.out.println(updateAccount);
 
             updateAccount.execute();
         } catch (SQLException ex) {
@@ -140,6 +139,24 @@ public class UserAccountDAO {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public List<String> getAllUserList() {
+        List<String> usernames = new ArrayList<>();
+        try {
+            PreparedStatement statement = connection.prepareStatement("SELECT userName FROM userAccounts");
+            ResultSet rs = statement.executeQuery();
+            while (rs.next()) {
+                usernames.add(
+                        new String(
+                                rs.getString("userName")
+                        )
+                );
+            }
+        } catch (SQLException ex) {
+            System.err.println(ex);
+        }
+        return usernames;
     }
 
     public List<String> getUserListByGroupId(int groupId) {
