@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cbdea7c7-8383-42c6-ab5a-512d6e6fb91f" name="Changes" comment="added stylesheets to settings page methods">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/DeleteProfileController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/familyconnect/delete-profile-view.fxml" afterDir="false" />
+    <list default="true" id="cbdea7c7-8383-42c6-ab5a-512d6e6fb91f" name="Changes" comment="cancel button functionality">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/UserProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/UserProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/familyconnect/user-profile-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/familyconnect/user-profile-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/database.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/DeleteProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/DeleteProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/model/UserAccountDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/familyconnect/model/UserAccountDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/familyconnect/delete-profile-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/familyconnect/delete-profile-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -248,7 +248,23 @@
       <option name="project" value="LOCAL" />
       <updated>1716722233634</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="created style of delete profile page">
+      <option name="closed" value="true" />
+      <created>1717060882441</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1717060882441</updated>
+    </task>
+    <task id="LOCAL-00014" summary="cancel button functionality">
+      <option name="closed" value="true" />
+      <created>1717061079464</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1717061079464</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -275,6 +291,8 @@
     <MESSAGE value="Readded settings button, adjusted scene view, and aligned overview to top-center" />
     <MESSAGE value="changed group &amp; member overviews alignments" />
     <MESSAGE value="added stylesheets to settings page methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="added stylesheets to settings page methods" />
+    <MESSAGE value="created style of delete profile page" />
+    <MESSAGE value="cancel button functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="cancel button functionality" />
   </component>
 </project>

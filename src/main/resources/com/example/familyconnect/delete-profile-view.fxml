@@ -14,7 +14,7 @@
     <Label text="Are you sure you want to delete your account?"/>
 
     <HBox alignment="CENTER" styleClass="profileContainer" spacing="5.0">
-        <Button fx:id="logoutButton" text="Logout" onAction="#onLogoutButtonClick" style="-fx-background-color: #ff0000;"/>
+        <Button fx:id="deleteButton" text="Delete" onAction="#onDeleteButtonClick" style="-fx-background-color: #ff0000;"/>
         <Button fx:id="cancelButton" text="Cancel" onAction="#onCancelButtonClick"/>
     </HBox>
 </VBox>

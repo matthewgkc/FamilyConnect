@@ -28,6 +28,8 @@ public class UserAccountDAO {
         }
     }
 
+
+
     public void insert(UserAccount userAccount) {
         try {
             PreparedStatement insertAccount = connection.prepareStatement(
