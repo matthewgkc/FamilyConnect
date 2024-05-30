@@ -17,6 +17,9 @@ public class DeleteProfileController {
     @FXML
     private Button logoutButton;
 
+    @FXML
+    private Button cancelButton;
+
     /**
      * Generates create group page
      */
@@ -39,6 +42,23 @@ public class DeleteProfileController {
         startController.setLogoutMessage("You have been logged out.");
 
         Scene scene = new Scene(root, HelloApplication.WIDTH, HelloApplication.HEIGHT);
+        String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
+        scene.getStylesheets().add(stylesheet);
+        stage.setScene(scene);
+    }
+
+    @FXML
+    protected void onCancelButtonClick() throws IOException {
+        UserAccountDAO userAccountDAO = new UserAccountDAO();
+
+        Stage stage = (Stage) cancelButton.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("user-profile-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+
+        com.example.familyconnect.UserProfileController controller = fxmlLoader.getController();
+        controller.setSession(new Session(userAccountDAO.getByUsername(userSession.getCurrentUserName())));
+        controller.initializeValues();
+
         String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
         scene.getStylesheets().add(stylesheet);
         stage.setScene(scene);
