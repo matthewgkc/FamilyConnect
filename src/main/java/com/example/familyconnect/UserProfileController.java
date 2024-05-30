@@ -152,4 +152,23 @@ public class UserProfileController {
         scene.getStylesheets().add(stylesheet);
         stage.setScene(scene);
     }
+
+    /**
+     *Sends user to delete profile page
+     */
+    @FXML
+    protected void onDeleteProfileClick() throws IOException {
+        Stage stage = (Stage)this.deleteProfileButton.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("delete-profile-view.fxml"));
+        Scene scene = new Scene((Parent)fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+
+        UserAccountDAO userAccountDAO = new UserAccountDAO();
+        com.example.familyconnect.DeleteProfileController controller = fxmlLoader.getController();
+        Session session = new Session(userAccountDAO.getByUsername(userSession.getCurrentUserName()));
+        controller.setSession(session);
+
+        String stylesheet = HelloApplication.class.getResource("Home-page-style.css").toExternalForm();
+        scene.getStylesheets().add(stylesheet);
+        stage.setScene(scene);
+    }
 }
