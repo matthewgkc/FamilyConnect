@@ -5,6 +5,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.ListView?>
 
 <VBox alignment="CENTER" spacing="10" xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.example.familyconnect.AddMembersController">
@@ -15,6 +16,10 @@
         <Button fx:id="backHomeButton" text="Home" onAction="#backtoHome"/>
     </HBox>
     <Label fx:id="groupNameLabel" text="Add Members"/>
+
+    <VBox alignment="CENTER" spacing="10.0">
+        <ListView fx:id="allUsersListView" minHeight="20" maxWidth="250" maxHeight="100"/>
+    </VBox>
 
     <TextField fx:id="memberNameField" promptText="Enter Member Name"/>
     <Label fx:id="successLabel" textFill="green" visible="false"/>

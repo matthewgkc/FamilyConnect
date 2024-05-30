@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -56,10 +57,28 @@ public class AddMembersController {
     @FXML
     private Button backHomeButton;
 
+    @FXML
+    private ListView<String> allUsersListView;
+
     public Session userSession;
 
     public void setSession(Session userSession) {
         this.userSession = userSession;
+
+        try {
+            UserAccountDAO userAccountDAO = new UserAccountDAO();
+            allUsersListView.getItems().addAll(userAccountDAO.getAllUserList());
+            allUsersListView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+                memberNameField.setText(newValue);
+            });
+        }
+        catch(NullPointerException exception) {
+            groupNameLabel.setText("No users in database.");
+        }
+        finally {
+            groupNameLabel.setWrapText(true);
+        }
+
     }
 
     /**
@@ -70,7 +89,7 @@ public class AddMembersController {
         UserAccountDAO userAccountDAO = new UserAccountDAO();
         Stage stage = (Stage)this.backHomeButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene((Parent)fxmlLoader.load(), 300.0, 450.0);
+        Scene scene = new Scene((Parent)fxmlLoader.load(), 400.0, 600.0);
 
         com.example.familyconnect.HelloController controller = fxmlLoader.getController();
 
